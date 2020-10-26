@@ -19,20 +19,15 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- This is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ > * This game is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
+ > * The languages/tools/technologies we plan to user are:
  >   *C++ 
      *React (possibly for frontend)
  >   *QT (possibly for UI)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
  >    *Input: text
  >    *Output: text displayed on the command line terminal.
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > * For our 3 design patterns, we will use Abstract Factory, Composite, and Strategy.
+  Abstract Factory - This will allow us to implement a base Character class which will be the hierarchy for multiple types of characters. Since we have many different characters with similar traits and actions, it will be useful for us to have an abstract class which contains the interface for the characters. The user will have a character selection in the beggining of the game where we will implement Abstract Factory.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
