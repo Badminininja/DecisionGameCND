@@ -2,7 +2,6 @@
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Crashed and Deserted
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
  > Authors: \<[Aramis Masarati](https://github.com/Aramismas)\>
  \<[Daria Senchylova](https://github.com/Bumblebee2019)\>
