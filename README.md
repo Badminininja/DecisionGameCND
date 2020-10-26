@@ -27,7 +27,7 @@
  >    * Input: text
  >    * Output: text displayed on the command line terminal.
  > * For our 3 design patterns, we will use Abstract Factory, Composite, and Strategy.
- > * Abstract Factory - This will allow us to implement a base Character class which will be the hierarchy for multiple types of characters. Since we have many different characters with similar traits and actions, it will be useful for us to have an abstract class which contains the interface for the characters. The user will have a character selection in the beggining of the game where we will implement Abstract Factory.
+ > * Abstract Factory - This will allow us to implement a base Character class which will be the hierarchy for multiple types of characters. Since we have many different characters with similar traits and actions, it will be useful for us to have an abstract class which contains the interface for the characters. The user will have a character selection in the beginning of the game where we will implement Abstract Factory.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
