@@ -7,16 +7,6 @@
  > Authors: \<[Aramis Masarati](https://github.com/Aramismas)\>
  \<[Daria Senchylova](https://github.com/Bumblebee2019)\>
  \<[Joseph Mangapit](https://github.com/badminininja)\>
- 
- > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
- 
- > ## Expectations
- > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
- >   * Composite, Strategy, Abstract Factory, Visitor
- > * All three design patterns need to be linked together (it can't be three distinct projects)
- > * Your project should be implemented in C/C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
  > * This game is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
