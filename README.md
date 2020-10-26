@@ -21,9 +21,15 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
+ This is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+ >   *C++ 
+     *React (possibly for frontend)
+ >   *QT (possibly for UI)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
+ >    *Input: text
+ >    *Output: text displayed on the command line terminal.
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
