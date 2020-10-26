@@ -24,8 +24,8 @@
  >   * C++ 
      * React (possibly for frontend)
  >   * QT (possibly for UI)
- >    * Input: text
- >    * Output: text displayed on the command line terminal.
+ > * Input: text
+ > * Output: text displayed on the command line terminal.
  > * For our 3 design patterns, we will use Abstract Factory, Composite, and Strategy.
  >   * Abstract Factory - This will allow us to implement a base Character class which will be the hierarchy for multiple types of characters. Since we have many different characters with similar traits and actions, it will be useful for us to have an abstract class which contains the interface for the characters. The user will have a character selection in the beginning of the game where we will implement Abstract Factory.
  >   * Strategy - This will allow us to create algorithms for general use in our game which we can constantly refer to despite being in different situations and progression in the game. This covers alot of code so that the user doesn't see what's going on in the backend of the game. The user will be able to use complicated algorithms with a click of a button regardless of their knowledge of the actual algorithm.
