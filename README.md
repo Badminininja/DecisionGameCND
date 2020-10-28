@@ -11,7 +11,7 @@
  > * This game is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
  > * The languages/tools/technologies we plan to user are:
  >   * C++ 
-     * React (possibly for frontend)
+ >   * React (possibly for frontend)
  >   * QT (possibly for UI)
  > * Input: text
  > * Output: text displayed on the command line terminal.
