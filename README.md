@@ -3,7 +3,7 @@
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Crashed and Deserted
  
- > Authors: \<[Aramis Masarati](https://github.com/Aramismas)\>
+ Authors: \<[Aramis Masarati](https://github.com/Aramismas)\>
  \<[Daria Senchylova](https://github.com/Bumblebee2019)\>
  \<[Joseph Mangapit](https://github.com/badminininja)\>
 
@@ -12,7 +12,7 @@
  * This game is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
  * The languages/tools/technologies we plan to user are:
    * C++ 
- * Input: text
+ * Input: text from the keyboard where the user will be able to pick different options that will determine their path in the story.
  * Output: text displayed on the command line terminal. (Terminal based game)
  * For our 3 design patterns, we will use Abstract Factory, Composite, and Strategy.
    * Abstract Factory - This will allow us to implement a base Character class which will be the hierarchy for multiple types of characters. Since we have many different characters with similar traits and actions, it will be useful for us to have an abstract class which contains the interface for the characters. The user will have a character selection in the beginning of the game where we will implement Abstract Factory.
