@@ -8,7 +8,7 @@
  \<[Joseph Mangapit](https://github.com/badminininja)\>
 
 ## Project Description
- * We plan on creating  a story driven game that contains choices that the user will have to pick which will determine the unique ending for the user based off their previous choices. We plan to have multiple endings and routes which creates a butterfly-effect story.
+ * We plan on creating  a story driven game where the user has crash landed on an island and is essentially deserted. The user will have to pick choices given which will determine the unique ending for the user based off all their choices throughout the story. We plan to have multiple endings and routes which creates a butterfly-effect story.
  * This game is important because we are all interested in video game development and we want all users to have a fun and unique experience with the game!
  * The languages/tools/technologies we plan to user are:
    * C++ 
