@@ -20,7 +20,7 @@
  
  ![AbstractFactory](https://user-images.githubusercontent.com/5094397/99346691-13cfab80-284a-11eb-83aa-9121e62fd59b.PNG)
  ![StrategyPattern](https://user-images.githubusercontent.com/5094397/99346702-1df1aa00-284a-11eb-9a93-7786b39f9302.PNG)
- ![CompositePattern](https://user-images.githubusercontent.com/5094397/99347287-99a02680-284b-11eb-8902-868f5322509b.PNG)
+ ![CompositePattern](https://user-images.githubusercontent.com/5094397/99347456-074c5280-284c-11eb-9740-e93acd2a1e94.PNG)
 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
