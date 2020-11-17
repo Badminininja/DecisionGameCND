@@ -28,7 +28,9 @@
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
  
- [CS100 Project Class Diagrams.pdf](https://github.com/cs100/final-project-amasa004-dsenc002-jmang018/files/5551235/CS100.Project.Class.Diagrams.pdf)
+ ![AbstractFactory](https://user-images.githubusercontent.com/5094397/99346691-13cfab80-284a-11eb-83aa-9121e62fd59b.PNG)
+ ![StrategyPattern](https://user-images.githubusercontent.com/5094397/99346702-1df1aa00-284a-11eb-9a93-7786b39f9302.PNG)
+
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
