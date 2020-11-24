@@ -13,7 +13,7 @@ class Dice6App : public RollApp {
 	private:
 		int sides = 6;
 		int currentNumber = 1;
-		int numberToBeat = sides;
+		int numberToBeat = sides/2;
 		int bias = 0;
 	public:
 		Dice6App();
