@@ -18,8 +18,8 @@ int Dice6App :: getNumOfSides(){
 	return numOfSides;
 }
 
-int Dice6App :: getCurrentNumber(){
-	return currentNumber;
+void Dice6App :: setCurrentNumber(int RolledNumber){
+	currentNumber = RolledNumber;
 }
 
 int Dice6App :: getNumberToBeat() {

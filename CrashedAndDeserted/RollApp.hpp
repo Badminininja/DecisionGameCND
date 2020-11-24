@@ -18,7 +18,7 @@ class RollApp {
 		virtual void print() = 0;
 		virtual void roll() = 0;
 		virtual int getNumOfSides() =0;
-		virtual int getCurrentNumber() = 0;
+		virtual void setCurrentNumber(int) = 0;
 		virtual int getNumberToBeat() = 0;
 		virtual int getBias() = 0;
 };

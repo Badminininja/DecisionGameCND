@@ -21,7 +21,7 @@ class Dice6App : public RollApp {
 		void print();
 		void roll();	
 		int  getNumOfSides();
-		int  getCurrentNumber();
+		void setCurrentNumber(int);
 		int  getNumberToBeat();
 		int  getBias();
 
