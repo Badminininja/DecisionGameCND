@@ -17,10 +17,10 @@ class RollApp {
 			this->RollFunction = RollFunction;};
 		virtual void print() = 0;
 		virtual void roll() = 0;
-		virtual int numOfSides() =0;
-		virtual int currentNumber() = 0;
-		virtual int numberToBeat() = 0;
-		virtual int bias() = 0;
+		virtual int getNumOfSides() =0;
+		virtual int getCurrentNumber() = 0;
+		virtual int getNumberToBeat() = 0;
+		virtual int getBias() = 0;
 };
 
 #endif
