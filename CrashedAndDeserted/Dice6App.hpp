@@ -1,5 +1,5 @@
 #ifndef _DICE_6_APP_HPP_
-#define _DEIC_6_APP_HPP_
+#define _DICE_6_APP_HPP_
 
 #include <iostream>
 #include <cmath>
@@ -21,7 +21,7 @@ class Dice6App : public RollApp {
 		void print();
 		void roll();	
 		int  getNumOfSides();
-		int  getCurrentNumber;
+		int  getCurrentNumber();
 		int  getNumberToBeat();
 		int  getBias();
 
