@@ -9,10 +9,9 @@ Orc* Orc::get_orc_instance() {
 	return orc_instance;
 }
 
-void Orc::special_attack(int player_health) {
-	player_health = player_health - 5;
-	//call a setter function that will change the player's health.
-	cout << "Your health is now: " << player_health << endl;                                            
+void Orc::special_attack() {
+	attack_strength = this->orc_health - 5;
+	cout << "The Orc's attack strngth is: " << attack_strength << endl;                                            
 }
 
 void Orc::boost_health() {

@@ -11,11 +11,12 @@ Boss* Boss::get_boss_instance() {
 	return boss_instance;
 }
 double Boss::attackDamage(int player_health, int attack_type) {
-	player_health = player_health - attack_type;
-	return player_health;
+	//the attack strength depends both on the character's health and thhe attack type
+	attack_factor = (player_health + attack_type) - 5; 
+	return attack_factor;
 }
 
 void Boss::reflectDamage() {
-	new_player_health = attackDamage(player_health, attack_type);
+	//player's health will be modified in a different class
 	cout << "Your attack was reflected by the Boss. Your health now is: " << player_health << endl;	
 }
