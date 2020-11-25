@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2C9DE1256E063900396226 /* animalMage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C9DDF256E063900396226 /* animalMage.cpp */; };
+		1A2C9DE4256E070900396226 /* humanMage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C9DE2256E070900396226 /* humanMage.cpp */; };
+		1A2C9DE7256E072300396226 /* humanWarrior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C9DE5256E072300396226 /* humanWarrior.cpp */; };
+		1A2C9DEA256E074100396226 /* animalWarrior.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C9DE8256E074100396226 /* animalWarrior.cpp */; };
 		1AF1E4FD256AF1A00014F1E2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AF1E4FC256AF1A00014F1E2 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2C9DDB256DFC4700396226 /* animalRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalRace.hpp; sourceTree = "<group>"; };
+		1A2C9DDD256DFC9700396226 /* humanRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanRace.hpp; sourceTree = "<group>"; };
+		1A2C9DDE256DFD9E00396226 /* characterRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = characterRace.hpp; sourceTree = "<group>"; };
+		1A2C9DDF256E063900396226 /* animalMage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = animalMage.cpp; sourceTree = "<group>"; };
+		1A2C9DE0256E063900396226 /* animalMage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalMage.hpp; sourceTree = "<group>"; };
+		1A2C9DE2256E070900396226 /* humanMage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = humanMage.cpp; sourceTree = "<group>"; };
+		1A2C9DE3256E070900396226 /* humanMage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanMage.hpp; sourceTree = "<group>"; };
+		1A2C9DE5256E072300396226 /* humanWarrior.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = humanWarrior.cpp; sourceTree = "<group>"; };
+		1A2C9DE6256E072300396226 /* humanWarrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanWarrior.hpp; sourceTree = "<group>"; };
+		1A2C9DE8256E074100396226 /* animalWarrior.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = animalWarrior.cpp; sourceTree = "<group>"; };
+		1A2C9DE9256E074100396226 /* animalWarrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalWarrior.hpp; sourceTree = "<group>"; };
+		1A2C9DEB256E075E00396226 /* mage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mage.hpp; sourceTree = "<group>"; };
+		1A2C9DEC256E078100396226 /* warrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = warrior.hpp; sourceTree = "<group>"; };
 		1AF1E4F9256AF1A00014F1E2 /* CrashedAndDeserted */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrashedAndDeserted; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF1E4FC256AF1A00014F1E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +75,19 @@
 			isa = PBXGroup;
 			children = (
 				1AF1E4FC256AF1A00014F1E2 /* main.cpp */,
+				1A2C9DDE256DFD9E00396226 /* characterRace.hpp */,
+				1A2C9DDB256DFC4700396226 /* animalRace.hpp */,
+				1A2C9DDD256DFC9700396226 /* humanRace.hpp */,
+				1A2C9DDF256E063900396226 /* animalMage.cpp */,
+				1A2C9DE0256E063900396226 /* animalMage.hpp */,
+				1A2C9DE8256E074100396226 /* animalWarrior.cpp */,
+				1A2C9DE9256E074100396226 /* animalWarrior.hpp */,
+				1A2C9DE2256E070900396226 /* humanMage.cpp */,
+				1A2C9DE3256E070900396226 /* humanMage.hpp */,
+				1A2C9DE5256E072300396226 /* humanWarrior.cpp */,
+				1A2C9DE6256E072300396226 /* humanWarrior.hpp */,
+				1A2C9DEB256E075E00396226 /* mage.hpp */,
+				1A2C9DEC256E078100396226 /* warrior.hpp */,
 			);
 			path = CrashedAndDeserted;
 			sourceTree = "<group>";
@@ -119,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2C9DE7256E072300396226 /* humanWarrior.cpp in Sources */,
 				1AF1E4FD256AF1A00014F1E2 /* main.cpp in Sources */,
+				1A2C9DE4256E070900396226 /* humanMage.cpp in Sources */,
+				1A2C9DE1256E063900396226 /* animalMage.cpp in Sources */,
+				1A2C9DEA256E074100396226 /* animalWarrior.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
