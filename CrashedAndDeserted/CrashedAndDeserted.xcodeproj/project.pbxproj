@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				1AF1E4FC256AF1A00014F1E2 /* main.cpp */,
-				1A2C9DDB256DFC4700396226 /* animalRace.hpp */,
 				1A2C9DDE256DFD9E00396226 /* characterRace.hpp */,
+				1A2C9DDB256DFC4700396226 /* animalRace.hpp */,
 				1A2C9DDD256DFC9700396226 /* humanRace.hpp */,
 				1A2C9DDF256E063900396226 /* animalMage.cpp */,
 				1A2C9DE0256E063900396226 /* animalMage.hpp */,
