@@ -10,9 +10,8 @@ class Troll {
 		double attack_power;
 		int health;
 		int deflect;
-	protected:
-		Troll();
 	public:
+		Troll();
 		static Troll* get_troll_instance();
 		double get_attack_power();
 		void deflect_damage(int, int);

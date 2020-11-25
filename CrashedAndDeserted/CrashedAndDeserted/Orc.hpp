@@ -9,9 +9,8 @@ class Orc {
 		static Orc* orc_instance;
 		double specialAttack;
 		int orc_health;
-	protected:
-		Orc();
 	public:
+		Orc();
 		static Orc* get_orc_instance();
 		void boost_health();
 		void special_attack(int);	

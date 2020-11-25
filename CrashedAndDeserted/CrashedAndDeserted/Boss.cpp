@@ -8,16 +8,14 @@ Boss* Boss::get_boss_instance() {
 	if (boss_instance == 0) {
 		boss_instance = new Boss;
 	}
-	return boss;
+	return boss_instance;
 }
-double Boss::attackDamage(int player_health) {
-	int damage_on_player = player_helath - 10;
-	player_health = player_health - damage_on_player;
-	cout << "You got attacked by the Boss. Your health now is: " << player_health << endl;
+double Boss::attackDamage(int player_health, int attack_type) {
+	player_health = player_health - attack_type;
+	return player_health;
 }
 
-int reflectDamage() {
-	cout << "The Boss reflected your strike." << endl;
-	this->health = this->health + 10;
-	cout << "The Boss' health now is: " << this->health;	
+void Boss::reflectDamage() {
+	new_player_health = attackDamage(player_health, attack_type);
+	cout << "Your attack was reflected by the Boss. Your health now is: " << player_health << endl;	
 }
