@@ -15,8 +15,8 @@
 
 class AnimalRace : public CharacterRace {
  public:
-    Mage* createMage(std::string name) {return new AnimalMage(std::name, "Animal");}
-    Warrior* createWarrior(std::string name) {return new AnimalWarrior(std::name, "Animal");}
+    Mage* createMage(std::string name) {return new AnimalMage(name, "Animal");}
+    Warrior* createWarrior(std::string name) {return new AnimalWarrior(name, "Animal");}
 };
 
 #endif /* animalRace_hpp */
