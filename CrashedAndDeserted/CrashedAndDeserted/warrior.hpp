@@ -28,6 +28,7 @@ class Warrior {
         virtual void damaged(double damage) = 0;
         virtual bool runAway(double chance, double opHealth) = 0;
         virtual void setHealthItem(bool val) {this->healthItem = val;}
+        virtual std::string getName() {return this->name;}
         virtual bool getHealthItem() {return healthItem;}
         virtual void increaseIQ(double IQ) {this->IQ += IQ;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
