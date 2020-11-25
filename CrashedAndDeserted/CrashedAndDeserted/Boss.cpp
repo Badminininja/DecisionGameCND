@@ -11,8 +11,8 @@ Boss* Boss::get_boss_instance() {
 	return boss_instance;
 }
 double Boss::attackDamage(int player_health, int attack_type) {
-	//the attack strength depends both on the character's health and thhe attack type
-	attack_factor = (player_health + attack_type) - 5; 
+	//the attack strength depends both on the Boss' health and the attack type
+	attack_factor = (this->health + attack_type) - 5; 
 	return attack_factor;
 }
 

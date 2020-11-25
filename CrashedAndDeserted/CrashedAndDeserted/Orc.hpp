@@ -13,6 +13,6 @@ class Orc {
 		Orc();
 		static Orc* get_orc_instance();
 		void boost_health();
-		void special_attack(int);	
+		void special_attack();	
 };
 #endif
