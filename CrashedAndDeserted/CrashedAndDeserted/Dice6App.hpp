@@ -4,8 +4,7 @@
 #include <iostream>
 #include <cmath>
 #include "RollApp.hpp"
-#include "RollStrategy"
-
+#include "RollStrategy.hpp"
 using namespace std;
 
 
@@ -17,7 +16,7 @@ class Dice6App : public RollApp {
 		int bias = 0;
 	public:
 		Dice6App();
-		Dice6App(RollStrategy* function) : RollApp(function){}
+		Dice6App(RollStrategy* function) : RollApp(RollFunction){}
 		void print();
 		void roll();	
 		int  getNumOfSides();
@@ -28,7 +27,7 @@ class Dice6App : public RollApp {
 
 
 
-}
+};
 
 
 
