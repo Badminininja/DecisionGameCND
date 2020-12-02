@@ -15,15 +15,19 @@ class Dice6App : public RollApp {
 		int numberToBeat = sides/2;
 		int bias = 0;
 	public:
-		Dice6App();
+		Dice6App();//basic constructor
+		Dice6App(int BEAT, int BIAS);
 		Dice6App(RollStrategy* function) : RollApp(RollFunction){}
 		void print();
 		void roll();	
 		int  getNumOfSides();
-		void setCurrentNumber(int);
+		int  getCurrentNumber();	
 		int  getNumberToBeat();
 		int  getBias();
 
+		void setCurrentNumber(int);
+		void setNumberToBeat(int);
+		void setBias(int);
 
 
 
