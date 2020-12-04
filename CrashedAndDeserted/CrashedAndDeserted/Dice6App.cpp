@@ -1,21 +1,33 @@
 #include "Dice6App.hpp"
 
 
-Dice6App::Dice6App() : RollApp(){}
+Dice6App :: Dice6App() : RollApp(){}
+
+Dice6App :: Dice6App(int Beat, int BIAS){
+	numberToBeat = Beat;
+	bias = BIAS;
+
+}
 
 void Dice6App :: print(){
-	cout << "Rolled a 6 sided dice /n Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
+
+	cout << "Rolled a 6 sided dice with a bias of: "<< bias << endl << "Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
 }
 
 void Dice6App :: roll(){
-	if(!function){
+	if(!RollFunction){
 		throw invalid_argument("NULL");
 	}
-	function->sort(this);
+	RollFunction->rolling(this);
+}
+
+int Dice6App :: getCurrentNumber(){
+	return currentNumber;
+
 }
 
 int Dice6App :: getNumOfSides(){
-	return numOfSides;
+	return sides;
 }
 
 void Dice6App :: setCurrentNumber(int RolledNumber){
@@ -23,7 +35,7 @@ void Dice6App :: setCurrentNumber(int RolledNumber){
 }
 
 int Dice6App :: getNumberToBeat() {
-	return numberToBest;
+	return numberToBeat;
 
 }
 
@@ -32,3 +44,12 @@ int Dice6App :: getBias() {
 
 }
 
+void Dice6App :: setNumberToBeat(int BEAT) {
+	numberToBeat = BEAT;
+
+}
+
+void Dice6App :: setBias(int BIAS) {
+	bias = BIAS;
+
+}

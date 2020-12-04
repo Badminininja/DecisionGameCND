@@ -8,10 +8,11 @@ class RollApp;
 class RollStrategy {
 	public:
 	//contructors
+	
 	RollStrategy(){};
 
 	//pure virtual
-	virtual void RollStrategy(RollApp* RollApp) = 0;
+	virtual void rolling(RollApp* RollApp) = 0;
 
 
 };

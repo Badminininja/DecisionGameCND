@@ -2,7 +2,7 @@
 
 
 
-void DisAdvRoll :: RollStrategy(RollApp* RollApp){
+void DisAdvRoll :: rolling(RollApp* RollApp){
 	int RolledNumber1 = rand() % RollApp->getNumOfSides() +1;
 	int RolledNumber2 = rand() % RollApp->getNumOfSides() +1;
 	int lowestNumber = RolledNumber1;

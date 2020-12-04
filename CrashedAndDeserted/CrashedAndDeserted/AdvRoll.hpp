@@ -14,7 +14,7 @@ class RollApp;
 class AdvRoll : public RollStrategy {
 	public:
 		AdvRoll() : RollStrategy() {}
-		void RollStrategy(RollApp* RollApp);
+		void rolling(RollApp* RollApp);
 
 };
 
