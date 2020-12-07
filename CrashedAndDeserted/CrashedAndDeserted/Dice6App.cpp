@@ -14,6 +14,25 @@ void Dice6App :: print(){
 	cout << "Rolled a 6 sided dice with a bias of: "<< bias << endl << "Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
 }
 
+void Dice6App :: SetRollFunction(){
+	
+	RollStrategy* function;
+	cout << "after initialization of RollStrat: Bias = " << bias <<endl;
+	if(bias == 0){
+		function = new NormalRoll();
+	}
+	if(bias < 0){
+		function = new DisAdvRoll();
+	}
+	else{
+		function = new AdvRoll();
+	}
+	cout << "after the if tree: Bias = "<<bias<<endl;
+	RollFunction = function;
+}
+
+
+
 void Dice6App :: roll(){
 	if(!RollFunction){
 		throw invalid_argument("NULL");
