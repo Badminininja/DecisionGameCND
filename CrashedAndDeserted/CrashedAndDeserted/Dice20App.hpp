@@ -1,5 +1,5 @@
-#ifndef _DICE_6_APP_HPP_
-#define _DICE_6_APP_HPP_
+#ifndef _DICE_20_APP_HPP_
+#define _DICE_20_APP_HPP_
 
 #include <iostream>
 #include <cmath>
@@ -10,9 +10,9 @@
 using namespace std;
 
 
-class Dice6App : public RollApp {
+class Dice20App : public RollApp {
 	private:
-		int sides = 6;
+		int sides = 20;
 		int currentNumber = 1;
 		int numberToBeat = sides/2;
 		int bias = 0;
