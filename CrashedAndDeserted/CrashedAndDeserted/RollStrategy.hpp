@@ -3,6 +3,7 @@
 
 #include "RollApp.hpp"
 #include <cmath>
+#include <ctime>
 class RollApp;
 
 class RollStrategy {
