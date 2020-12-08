@@ -1,21 +1,21 @@
-#ifndef __DICE_6_APP_TEST_HPP
-#define __DICE_6_APP_TEST_HPP
+#ifndef __DICE_20_APP_TEST_HPP
+#define __DICE_20_APP_TEST_HPP
 #include "gtest/gtest.h"
 
 
-#include "Dice6App.hpp"
+#include "Dice20App.hpp"
 
 using namespace std;
-TEST(Dice6, SimpleCreation) {
-	Dice6App* dice = new Dice6App();
+TEST(Dice20, SimpleCreation) {
+	Dice20App* dice = new Dice20App();
 	dice->print();
 	EXPECT_EQ(dice->getNumberToBeat(), 3);
 	EXPECT_EQ(dice->getBias(), 0);
 	EXPECT_EQ(dice->getCurrentNumber(), 1);
 }
 
-TEST(Dice6, DifferentConstructor) {
-        Dice6App* dice = new Dice6App(6,3);
+TEST(Dice20, DifferentConstructor) {
+        Dice20App* dice = new Dice20App(6,3);
         dice->print();
         EXPECT_EQ(dice->getNumberToBeat(), 6);
         EXPECT_EQ(dice->getBias(), 3);
@@ -23,8 +23,8 @@ TEST(Dice6, DifferentConstructor) {
 	
 }
 
-TEST(Dice6, SettingBias) {
-        Dice6App* dice = new Dice6App();
+TEST(Dice20, SettingBias) {
+        Dice20App* dice = new Dice20App();
 	dice->setBias(7);
         dice->print();
         EXPECT_EQ(dice->getNumberToBeat(), 3);
@@ -32,8 +32,8 @@ TEST(Dice6, SettingBias) {
         EXPECT_EQ(dice->getCurrentNumber(), 1);
 }
 
-TEST(Dice6, SettingNumberToBeat) {
-        Dice6App* dice = new Dice6App();
+TEST(Dice20, SettingNumberToBeat) {
+        Dice20App* dice = new Dice20App();
 	dice->setNumberToBeat(2);
         dice->print();
         EXPECT_EQ(dice->getNumberToBeat(), 2);
@@ -41,8 +41,8 @@ TEST(Dice6, SettingNumberToBeat) {
         EXPECT_EQ(dice->getCurrentNumber(), 1);
 }
 
-TEST(Dice6, testingNormalRoll) {
-        Dice6App* dice = new Dice6App();
+TEST(Dice20, testingNormalRoll) {
+        Dice20App* dice = new Dice20App();
         dice->setNumberToBeat(2);
 
 	dice->print();
@@ -54,8 +54,8 @@ TEST(Dice6, testingNormalRoll) {
         EXPECT_EQ(dice->getBias(), 0);
         
 }
-TEST(Dice6, testingDisAdvRoll) {
-        Dice6App* dice = new Dice6App();
+TEST(Dice20, testingDisAdvRoll) {
+        Dice20App* dice = new Dice20App();
         dice->setBias(-9);
         dice->print();
         dice->SetRollFunction();
