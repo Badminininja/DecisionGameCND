@@ -9,12 +9,12 @@
 #include "humanWarrior.hpp"
 #include <iostream>
 
-int HumanWarrior::attack() {
+double HumanWarrior::attack() {
     std::cout << this->name << " used a basic attack and did " << this->basicAttack << " damage." << std::endl;
     return this->basicAttack;
 }
 
-int HumanWarrior::specialAttack() {
+double HumanWarrior::specialAttack() {
     std::cout << this->name << " used a smite attack and did " << this->smite << " damage." << std::endl;
     return this->smite;
 }
