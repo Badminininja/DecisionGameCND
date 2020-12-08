@@ -20,6 +20,7 @@ TEST(Dice6, DifferentConstructor) {
         EXPECT_EQ(dice->getNumberToBeat(), 6);
         EXPECT_EQ(dice->getBias(), 3);
         EXPECT_EQ(dice->getCurrentNumber(), 1);
+	
 }
 
 TEST(Dice6, SettingBias) {
@@ -38,6 +39,31 @@ TEST(Dice6, SettingNumberToBeat) {
         EXPECT_EQ(dice->getNumberToBeat(), 2);
         EXPECT_EQ(dice->getBias(), 0);
         EXPECT_EQ(dice->getCurrentNumber(), 1);
+}
+
+TEST(Dice6, testingNormalRoll) {
+        Dice6App* dice = new Dice6App();
+        dice->setNumberToBeat(2);
+
+	dice->print();
+	
+	dice->SetRollFunction();
+	dice->roll();
+        dice->print();
+        EXPECT_EQ(dice->getNumberToBeat(), 2);
+        EXPECT_EQ(dice->getBias(), 0);
+        
+}
+TEST(Dice6, testingDisAdvRoll) {
+        Dice6App* dice = new Dice6App();
+        dice->setBias(-9);
+        dice->print();
+        dice->SetRollFunction();
+	dice->print();
+        dice->roll();
+        dice->print();
+        EXPECT_EQ(dice->getBias(), (-9));
+
 }
 
 #endif

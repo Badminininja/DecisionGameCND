@@ -2,7 +2,9 @@
 #define _ROLL_APP_HPP_
 
 #include "RollStrategy.hpp"
-
+#include "DisAdvRoll.hpp"
+#include "NormalRoll.hpp"
+#include "AdvRoll.hpp"
 class RollStratey;
 
 class RollApp {
@@ -13,8 +15,7 @@ class RollApp {
 		RollApp() : RollFunction(nullptr) {};
 		RollApp(RollStrategy* function) : RollFunction(function){};
 		
-		void SetSortFunction(RollStrategy* RollFunction){
-			this->RollFunction = RollFunction;};
+		virtual void SetRollFunction() = 0;
 		virtual void print() = 0;
 		virtual void roll() = 0;
 		virtual int getNumOfSides() =0;

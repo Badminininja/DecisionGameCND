@@ -5,6 +5,8 @@
 #include <cmath>
 #include "RollApp.hpp"
 #include "RollStrategy.hpp"
+
+
 using namespace std;
 
 
@@ -18,6 +20,7 @@ class Dice6App : public RollApp {
 		Dice6App();//basic constructor
 		Dice6App(int BEAT, int BIAS);
 		Dice6App(RollStrategy* function) : RollApp(RollFunction){}
+		void SetRollFunction();
 		void print();
 		void roll();	
 		int  getNumOfSides();
