@@ -40,6 +40,7 @@
 		1A2C9DE9256E074100396226 /* animalWarrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalWarrior.hpp; sourceTree = "<group>"; };
 		1A2C9DEB256E075E00396226 /* mage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mage.hpp; sourceTree = "<group>"; };
 		1A2C9DEC256E078100396226 /* warrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = warrior.hpp; sourceTree = "<group>"; };
+		1AD9904E257C3E9E007564F7 /* character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = character.hpp; sourceTree = "<group>"; };
 		1AF1E4F9256AF1A00014F1E2 /* CrashedAndDeserted */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrashedAndDeserted; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF1E4FC256AF1A00014F1E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +88,7 @@
 				1A2C9DE5256E072300396226 /* humanWarrior.cpp */,
 				1A2C9DE6256E072300396226 /* humanWarrior.hpp */,
 				1A2C9DEB256E075E00396226 /* mage.hpp */,
+				1AD9904E257C3E9E007564F7 /* character.hpp */,
 				1A2C9DEC256E078100396226 /* warrior.hpp */,
 			);
 			path = CrashedAndDeserted;

@@ -15,8 +15,8 @@
 
 class HumanRace : public CharacterRace {
  public:
-    Mage* createMage(std::string name) {return new HumanMage(name, "Human");}
-    Warrior* createWarrior(std::string name) {return new HumanWarrior(name, "Human");}
+    Mage* createMage(std::string name) {HumanMage* m = new HumanMage(name, "Human"); return m;}
+    Warrior* createWarrior(std::string name) {HumanWarrior* m = new HumanWarrior(name, "Human"); return m;}
 };
 
 #endif /* humanRace_h */

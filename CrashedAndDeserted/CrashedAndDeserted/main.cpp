@@ -12,23 +12,23 @@
 
 using namespace std;
 
-void openingScene(CharacterRace* typeCharacter, Warrior* userWarrior, Mage* userMage);
-int firstScene(Warrior* userWarrior, Mage* userMage, vector<string> progress);
+Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
+int firstScene(Character* userCharacter, vector<string> progress);
 
 int main() {
     CharacterRace* typeCharacter;
-    Warrior* userWarrior;
-    Mage* userMage;
+    Character* userCharacter;
     int sceneNum;
     vector<string> progress;
     //Will have to make a Character class that inherits the Mage and Warrior classes
-    openingScene(typeCharacter, userWarrior, userMage);
-    sceneNum = firstScene(userWarrior, userMage, progress);
+    userCharacter = openingScene(typeCharacter,userCharacter);
+    sceneNum = firstScene(userCharacter, progress);
     return 0;
 }
 
-void openingScene(CharacterRace* typeCharacter, Warrior* userWarrior, Mage* userMage) {
+Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) {
     string name;
+    Character* character;
     int response = 0;
     cout << "SCENE: Court Room" << endl;
     cout << "Judge: Who is the next person up for judgment?" << endl;
@@ -53,9 +53,9 @@ void openingScene(CharacterRace* typeCharacter, Warrior* userWarrior, Mage* user
     while ((response != 1) && (response != 2)) {
         cin >> response;
         if (response == 1) {
-            userWarrior = typeCharacter->createWarrior(name);
+            character = typeCharacter->createWarrior(name);
         } else if (response == 2) {
-            userMage = typeCharacter->createMage(name);
+            character = typeCharacter->createMage(name);
         } else {
             cout << "Judge: No funny business, please tell me your profession." << endl;
             cout << "(Enter 1 for warrior or 2 for mage)" << endl;
@@ -66,9 +66,10 @@ void openingScene(CharacterRace* typeCharacter, Warrior* userWarrior, Mage* user
     cout << "Judge: Valid or invalid, your crimes are still clear, but if you still believe your life should not be taken, then you shall be exiled on the abandoned island." << endl;
     cout << name << ": But your honor-" << endl;
     cout << "Judge: Silence, your sentence is final. Guards, take him away." << endl << endl;
+    return character;
 }
 
-int firstScene(Warrior* userWarrior, Mage* userMage, vector<string> progress) {
+int firstScene(Character* userCharacter, vector<string> progress) {
     int response = 0;
     int scene = 0;
     cout << "SCENE: Stranded Beach" << endl;
@@ -94,7 +95,7 @@ int firstScene(Warrior* userWarrior, Mage* userMage, vector<string> progress) {
             progress.push_back("You decided to walk along the beach.");
             scene = 2;
         } else if (response == 3) {
-            userMage->stats();
+            userCharacter->stats();
             cout << endl;
             cout << "(Enter 1 to venture into the forest)" << endl;
             cout << "(Enter 2 to trek along the beach)" << endl;

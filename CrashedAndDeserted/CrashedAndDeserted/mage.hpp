@@ -10,8 +10,9 @@
 #define mage_h
 
 #include <string>
+#include "character.hpp"
 
-class Mage {
+class Mage : public Character{
     private:
         std::string name;
         std::string race;
@@ -21,7 +22,6 @@ class Mage {
         double health;
         double spells;
     public:
-        Mage(std::string name, std::string race) : name(name), race(race) {}
         virtual int attack() = 0;
         virtual int specialAttack() = 0;
         virtual void healthIncrease() = 0;

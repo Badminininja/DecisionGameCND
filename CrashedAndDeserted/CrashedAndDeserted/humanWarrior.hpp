@@ -22,7 +22,7 @@ class HumanWarrior : public Warrior {
         double health;
         double smite;
     public:
-        HumanWarrior(std::string name, std::string race) : Warrior(name,race), healthItem(false), IQ(3.5), basicAttack(4.5), health(16.5), smite(8.0) {}
+        HumanWarrior(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(3.5), basicAttack(4.5), health(16.5), smite(8.0) {}
         virtual int attack();
         virtual int specialAttack();
         virtual void healthIncrease();
