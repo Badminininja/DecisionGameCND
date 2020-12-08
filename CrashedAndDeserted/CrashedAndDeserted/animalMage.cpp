@@ -9,12 +9,12 @@
 #include "animalMage.hpp"
 #include <iostream>
 
-int AnimalMage::attack() {
+double AnimalMage::attack() {
     std::cout << this->name << " used a basic attack and did " << this->basicAttack << " damage." << std::endl;
     return this->basicAttack;
 }
 
-int AnimalMage::specialAttack() {
+double AnimalMage::specialAttack() {
     std::cout << this->name << " used a spell attack and did " << this->spells << " damage." << std::endl;
     return this->spells;
 }

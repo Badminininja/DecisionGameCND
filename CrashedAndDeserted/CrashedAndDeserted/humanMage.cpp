@@ -9,12 +9,12 @@
 #include "humanMage.hpp"
 #include <iostream>
 
-int HumanMage::attack() {
+double HumanMage::attack() {
     std::cout << this->name << " used a basic attack and did " << this->basicAttack << " damage." << std::endl;
     return this->basicAttack;
 }
 
-int HumanMage::specialAttack() {
+double HumanMage::specialAttack() {
     std::cout << this->name << " used a spell attack and did " << this->spells << " damage." << std::endl;
     return this->spells;
 }

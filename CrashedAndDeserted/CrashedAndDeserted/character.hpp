@@ -19,20 +19,19 @@ class Character {
         double IQ;
         double basicAttack;
         double health;
-        double spells;
     public:
-        virtual int attack() = 0;
-        virtual int specialAttack() = 0;
+        virtual double attack() = 0;
+        virtual double specialAttack() = 0;
         virtual void healthIncrease() = 0;
         virtual void damaged(double damage) = 0;
         virtual bool runAway(double chance, double opHealth) = 0;
         virtual std::string getName() {return this->name;}
+        virtual double getHealth() {return this->health;}
         virtual void setHealthItem(bool val) {this->healthItem = val;}
         virtual bool getHealthItem() {return healthItem;}
         virtual void increaseIQ(double IQ) {this->IQ += IQ;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
-        virtual void increaseSpells(double spells) {this->spells += spells;}
         virtual void stats() = 0;
 };
 
