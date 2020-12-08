@@ -22,6 +22,7 @@ class RollApp {
 		virtual void setCurrentNumber(int) = 0;
 		virtual int getNumberToBeat() = 0;
 		virtual int getBias() = 0;
+		virtual int getCurrentNumber() = 0;
 };
 
 #endif

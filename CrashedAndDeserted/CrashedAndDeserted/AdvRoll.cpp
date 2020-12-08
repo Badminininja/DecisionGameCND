@@ -2,11 +2,15 @@
 
 
 void AdvRoll :: rolling(RollApp* RollApp) {
-	int RolledNumber1 = rand() % RollApp->getNumOfSides() +1;
-	int RolledNumber2 = rand() % RollApp->getNumOfSides() +1;
-	int highestNumber = RolledNumber1;
-	if (RolledNumber1 < RolledNumber2)
-		highestNumber = RolledNumber2;
+	int temp;
+	int highestNumber = RollApp->getCurrentNumber();
+	for(unsigned int i = 0; i < RollApp->getBias(); i++){
+		temp = rand() % RollApp->getNumOfSides() +1;
+		if(temp > highestNumber){
+			highestNumber = temp;
+		} 
+	}
+	
 	RollApp->setCurrentNumber(highestNumber);
 
 
