@@ -13,13 +13,13 @@ using namespace std;
 class Dice20App : public RollApp {
 	private:
 		int sides = 20;
-		int currentNumber = 1;
+		int currentNumber = (-1);
 		int numberToBeat = sides/2;
 		int bias = 0;
 	public:
-		Dice6App();//basic constructor
-		Dice6App(int BEAT, int BIAS);
-		Dice6App(RollStrategy* function) : RollApp(RollFunction){}
+		Dice20App();//basic constructor
+		Dice20App(int BEAT, int BIAS);
+		Dice20App(RollStrategy* function) : RollApp(RollFunction){}
 		void SetRollFunction();
 		void print();
 		void roll();	

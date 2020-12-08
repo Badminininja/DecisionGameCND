@@ -17,7 +17,7 @@ void Dice20App :: print(){
 void Dice20App :: SetRollFunction(){
 	
 	RollStrategy* function;
-	cout << "after initialization of RollStrat: Bias = " << bias <<endl;
+	
 	if(bias == 0){
 		function = new NormalRoll();
 	}
@@ -27,7 +27,7 @@ void Dice20App :: SetRollFunction(){
 	else{
 		function = new AdvRoll();
 	}
-	cout << "after the if tree: Bias = "<<bias<<endl;
+	
 	RollFunction = function;
 }
 
