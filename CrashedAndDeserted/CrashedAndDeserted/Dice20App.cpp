@@ -1,20 +1,20 @@
-#include "Dice6App.hpp"
+#include "Dice20App.hpp"
 
 
-Dice6App :: Dice6App() : RollApp(){}
+Dice20App :: Dice20App() : RollApp(){}
 
-Dice6App :: Dice6App(int Beat, int BIAS){
+Dice20App :: Dice20App(int Beat, int BIAS){
 	numberToBeat = Beat;
 	bias = BIAS;
 
 }
 
-void Dice6App :: print(){
+void Dice20App :: print(){
 
 	cout << "Rolled a 6 sided dice with a bias of: "<< bias << endl << "Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
 }
 
-void Dice6App :: SetRollFunction(){
+void Dice20App :: SetRollFunction(){
 	
 	RollStrategy* function;
 	cout << "after initialization of RollStrat: Bias = " << bias <<endl;
@@ -33,42 +33,42 @@ void Dice6App :: SetRollFunction(){
 
 
 
-void Dice6App :: roll(){
+void Dice20App :: roll(){
 	if(!RollFunction){
 		throw invalid_argument("NULL");
 	}
 	RollFunction->rolling(this);
 }
 
-int Dice6App :: getCurrentNumber(){
+int Dice20App :: getCurrentNumber(){
 	return currentNumber;
 
 }
 
-int Dice6App :: getNumOfSides(){
+int Dice20App :: getNumOfSides(){
 	return sides;
 }
 
-void Dice6App :: setCurrentNumber(int RolledNumber){
+void Dice20App :: setCurrentNumber(int RolledNumber){
 	currentNumber = RolledNumber;
 }
 
-int Dice6App :: getNumberToBeat() {
+int Dice20App :: getNumberToBeat() {
 	return numberToBeat;
 
 }
 
-int Dice6App :: getBias() {
+int Dice20App :: getBias() {
 	return bias;
 
 }
 
-void Dice6App :: setNumberToBeat(int BEAT) {
+void Dice20App :: setNumberToBeat(int BEAT) {
 	numberToBeat = BEAT;
 
 }
 
-void Dice6App :: setBias(int BIAS) {
+void Dice20App :: setBias(int BIAS) {
 	bias = BIAS;
 
 }
