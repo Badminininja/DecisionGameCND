@@ -1,5 +1,5 @@
-#ifndef CLASS_ORC
-#define CLASS_ORC
+#ifndef CLASS_EXILED_MEMBER
+#define CLASS_EXILED_MEMBER
 #include <iostream>
 #include "character"
 using namespace std;
@@ -10,11 +10,14 @@ class ExiledMember {
 		double specialAttack;
 		int health = 20;
 		int damage = 4;
-	public:
+	protected:
 		ExiledMember();
+	public:
 		static ExiledMember* get_exiled_instance();
 		void boost_health();
-		void loseHealth();
+		void loseHealth(double);
 		void special_attack(Character*);	
+		int getDamage();
+		int getHealth();
 };
 #endif

@@ -9,11 +9,14 @@ class Boss {
 		//double attackDamage;
 		int health = 25;
 		int damage = 5;
-	public:
+	protected:
 		Boss();
+	public:
 		static Boss* get_boss_instance();
 		double attackDamage(Character*);
 		void reflectDamage(double, Character*);
 		void loseHealth(double);
+		int getHealth();
+		int getDamge();
 };
 #endif

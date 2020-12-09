@@ -14,7 +14,7 @@ using namespace std;
 
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
 int firstScene(Character* userCharacter, vector<string> progress);
-
+bool GoblinBattle(Character* player);
 int main() {
     CharacterRace* typeCharacter;
     Character* userCharacter;
@@ -109,3 +109,58 @@ int firstScene(Character* userCharacter, vector<string> progress) {
     }
     return scene;
 }
+
+bool GoblinBattle(Character* player) {
+	Goblin* goblinObj = new Goblin();
+	while((player->getHealth() > 0) || goblinObj->getHealth() > 0) {
+		cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+		cout << "Player health: " << player->getHealth() << endl;
+		cout << "Goblin health: " << goblinObj->getHealth() << endl; 
+		cout << "Enter one of the numbers displayed below as one of your options: " << endl;
+		cout << "Enter 1 to use regular attack" << endl;
+		cout << "Enter 2 to use a special attack" << endl;
+		cout << "Enter 3 to use a health item" endl;
+		cout << "Enter 4 to run away" << endl;
+		int userInput = -1;
+		cin >> userInput;
+		while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
+			if (userInput == 1) {
+				double getDamage = player->attack();
+				goblinObj->loseHealth(getDamage);
+			}
+			else if (userInput == 2) {
+				 double getDamage = player->specialAttack();
+				 goblinObj->loseHealth(getDamage);
+ 			}
+			else if (userInput == 3) {
+				bool checker = player->getHealthItem();
+					if (checker) {
+						player->increaseHealth(2.0);
+					}
+					else {
+						cout << "You don't have a health item." << endl;
+						cout << "Enter another option: " << endl
+					}	
+			}
+			else if (userInput == 4) {	//uses Joseph's random func. class to determine if runaway is successful
+			}
+			else {
+				cout << "Error: Invalid input" << endl;
+				cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+				cout << "Player health: " << player->getHealth() << endl;
+				cout << "Goblin health: " << goblinObj->getHealth() << endl;
+				cout << "Enter one of the numbers displayed below as one of your options: " << endl;
+				cout << "Enter 1 to use regualar attack" << endl;
+				cout << "Enter 2 to use a special attack" << endl;
+				cout << "Enter 3 to use a health item" endl;
+				cout << "Enter 4 to run away" << endl;
+				int userInput = -1;
+				cin >> userInput;
+			}
+		}
+	} 
+}
+
+
+
+

@@ -1,7 +1,8 @@
 #include "gtest/gtest.h"
 
-#include "Orc.hpp"
+#include "Goblin.hpp"
 #include "Boss.hpp"
+#include "ExiledMember.hpp"
 #include "Dice6AppTest.hpp"
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
