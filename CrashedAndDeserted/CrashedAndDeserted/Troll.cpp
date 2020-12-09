@@ -10,18 +10,26 @@ Troll* Troll::get_troll_instance() {
 	return troll_intance;
 }
 
-double Troll::get_attack_power() {
-	return this->attack_power;
+void Troll::attack_power_indicator(Character* player) {
+	cout << "The Troll did " << this->attack_power << "amount of damage" << endl;
+	player->damaged(this->attack_power);
 }
 
-void Troll::deflect_damage(int player_attack, int player_health) { 
+void Troll::deflect_damage(double player_attack, Character* player) { 
 	cout << "Your attack of " << player_attack << " on the Troll was deflected." << endl;
-	cout << "Your health remains the same: " << player_health << endl;
-	cout << "Trolls' health remains the same: " << endl;
+	cout << "Your health remains the same: " << player->getHealth() << endl;
+	cout << "Trolls' health remains the same: " << this->health <<  endl;
 }
-
-void Troll::health_increase(int player_attack) {
+/*
+void Troll::health_increase() {
 	//the Troll has the ability to boost its health if the player was unable to repeal an attack
-	 health_increase_factor = this->health + 2;
-	cout << "Troll's health was boosted by " << health_increase_factor << endl;
+	 double health_increase_factor = this->health + 2;
+	this->health = health_increase_factor;
+	cout << "Troll's health was boosted by 2" << endl;
+	cout << "The Troll's health is now: " << this->health << endl;
+}*/
+void Troll::loseHealth(double playerAttack) {
+	cout << "The Troll has lost " << playerAttack << " health." << endl;
+	this->health = this->health - playerAttack;
+	cout << "The Troll has " << this->health << endl;
 }
