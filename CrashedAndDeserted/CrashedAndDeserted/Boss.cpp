@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Boss* Boss:boss_instance = 0;
+Boss* Boss::boss_instance = 0;
 
 Boss* Boss::get_boss_instance() {
 	if (boss_instance == 0) {
@@ -23,7 +23,13 @@ void Boss::reflectDamage(double playerAttack, Character* player) {
 	cout << "Your attack was reflected by the Boss. Your health now is: " << player->getHealth()<< endl;	
 }
 void Boss::loseHealth(double playerAttack) {
-	cout << "The Boss has lost " << playerAttack << " health." << endl;
+	cout << "The Boss has lost " << playerAttack << " health" << endl;
 	cout << "The Boss has " << this->health - playerAttack << " health" << endl;
 	this->health = this->health - playerAttack;
+}
+int Boss::getHealth() {
+	return this->health;
+}
+int Boss::getDamage() {
+	return this->damage();
 }
