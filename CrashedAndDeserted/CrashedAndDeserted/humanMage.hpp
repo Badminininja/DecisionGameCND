@@ -23,8 +23,8 @@ class HumanMage : public Mage {
         double spells;
     public:
         HumanMage(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(6.0), basicAttack(4.0), health(20.0), spells(6.5) {}
-        virtual int attack();
-        virtual int specialAttack();
+        virtual double attack();
+        virtual double specialAttack();
         virtual void healthIncrease();
         virtual void damaged(double damage);
         virtual bool runAway(double chance, double opHealth);
@@ -32,6 +32,7 @@ class HumanMage : public Mage {
         virtual void setHealthItem(bool val) {this->healthItem = val;}
         virtual bool getHealthItem() {return healthItem;}
         virtual void increaseIQ(double IQ) {this->IQ += IQ;}
+        virtual double getHealth() {return this->health;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
         virtual void increaseSpells(double spells) {this->spells += spells;}

@@ -23,8 +23,8 @@ class AnimalWarrior : public Warrior {
         double smite;
     public:
         AnimalWarrior(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(4.0), basicAttack(5.5), health(18.0), smite(7.0) {}
-        virtual int attack();
-        virtual int specialAttack();
+        virtual double attack();
+        virtual double specialAttack();
         virtual void healthIncrease();
         virtual void damaged(double damage);
         virtual bool runAway(double chance, double opHealth);
@@ -32,6 +32,7 @@ class AnimalWarrior : public Warrior {
         virtual void setHealthItem(bool val) {this->healthItem = val;}
         virtual bool getHealthItem() {return healthItem;}
         virtual void increaseIQ(double IQ) {this->IQ += IQ;}
+        virtual double getHealth() {return this->health;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
         virtual void increaseSpells(double smite) {this->smite += smite;}

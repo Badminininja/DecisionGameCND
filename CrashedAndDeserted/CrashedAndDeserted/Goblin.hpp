@@ -1,21 +1,23 @@
-#ifndef CLASS_TROLL
-#define CLASS_TROLL
+#ifndef CLASS_GOBLIN
+#define CLASS_GOBLIN
 #include <iostream>
 #include "character.hpp"
 using namespace std;
 
-class Troll {
+class Goblin {
 	private:
-		static Troll* troll_instance;
+		static Goblin* goblin_instance;
 		double attack_power = 4;
 		double health = 20;
-		//int deflect;
+	protected:
+		Goblin(); 
 	public:
-		Troll();
-		static Troll* get_troll_instance();
+		static Goblin* get_troll_instance();
 		double attack_power_indicator(Character*);
 		void deflect_damage(double, Character*);
 		void loseHealth(double);
+		int getHealth();
+		int getSpecialAttack();
 		
 };
 #endif

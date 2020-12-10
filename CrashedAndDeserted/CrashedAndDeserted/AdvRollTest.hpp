@@ -1,22 +1,25 @@
-#ifndef __NORMAL_ROLL_TEST_HPP
-#define __NORMAL_ROLL_TEST_HPP
+#ifndef __ADV_ROLL_TEST_HPP
+#define __ADV_ROLL_TEST_HPP
+
 #include "gtest/gtest.h"
 
-
 #include "Dice20App.hpp"
+
 using namespace std;
 
 
-TEST(NormalRoll, SimpleRolling){
-	Dice20App* dice = new Dice20App();
+
+TEST(AdvRoll, SimpleRolling){
+	Dice20App* dice = new Dice20App(10,10);
 	dice->print();
 	dice->SetRollFunction();
 	dice->roll();
 	dice->print();
 	EXPECT_NE(dice->getCurrentNumber(), (-1));
 }
-TEST(NormalRoll, SimpleRolling2){
-        Dice20App* dice = new Dice20App();
+
+TEST(AdvRoll, SimpleRolling2){
+        Dice20App* dice = new Dice20App(10,3);
         dice->print();
         dice->SetRollFunction();
         dice->roll();
@@ -24,37 +27,29 @@ TEST(NormalRoll, SimpleRolling2){
         EXPECT_NE(dice->getCurrentNumber(), (-1));
 }
 
-TEST(NormalRoll, AboveBoundsChecking){
-	Dice20App* dice = new Dice20App();
+TEST(AdvRoll, AboveBoundsChecking){
+        Dice20App* dice = new Dice20App(10,100);
 	dice->SetRollFunction();
 	dice->roll();
-	int highest = dice->getCurrentNumber();
-	for(unsigned int i = 0; i < 100; i++){
-		dice->roll();
-		if(dice->getCurrentNumber() > highest){
-			highest = dice->getCurrentNumber();
-		}
-	}
-	EXPECT_GT((dice->getNumOfSides()+1), highest);
-
-
+	cout << "highest: " << dice->getCurrentNumber()<<endl;
+	EXPECT_GT((dice->getNumOfSides()+1),dice->getCurrentNumber());
 
 }
 TEST(NormalRoll, BelowBoundsChecking){
-        Dice20App* dice = new Dice20App();
+        Dice20App* dice = new Dice20App(10, 1);
         dice->SetRollFunction();
         dice->roll();
         int lowest = dice->getCurrentNumber();
-        for(unsigned int i = 0; i < 100; i++){
+        for(unsigned int i = 0; i < 1000; i++){
                 dice->roll();
                 if(dice->getCurrentNumber() < lowest){
                         lowest = dice->getCurrentNumber();
                 }
         }
+	cout << "lowest: " << lowest<<endl;
         EXPECT_LT(0, lowest);
 
 
 
 }
-
 #endif

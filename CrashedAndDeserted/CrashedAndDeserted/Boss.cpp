@@ -1,8 +1,8 @@
-#include "Boss.cpp"
+#include "Boss.hpp"
 
 using namespace std;
 
-Boss* Boss:boss_instance = 0;
+Boss* Boss::boss_instance = 0;
 
 Boss* Boss::get_boss_instance() {
 	if (boss_instance == 0) {
@@ -10,13 +10,26 @@ Boss* Boss::get_boss_instance() {
 	}
 	return boss_instance;
 }
-double Boss::attackDamage(int player_health, int attack_type) {
-	//the attack strength depends both on the Boss' health and the attack type
-	attack_factor = (this->health + attack_type) - 5; 
-	return attack_factor;
+double Boss::attackDamage(Character* player) {
+	cout << "The Boss did " << this->damage << " damage" << endl;
+	player->getDamage(this->damage);
+	return this->damage;
 }
 
-void Boss::reflectDamage() {
+void Boss::reflectDamage(double playerAttack, Character* player) {
+	//change to include parameters and add a return type
 	//player's health will be modified in a different class
-	cout << "Your attack was reflected by the Boss. Your health now is: " << player_health << endl;	
+	player->damaged(playerAttack);
+	cout << "Your attack was reflected by the Boss. Your health now is: " << player->getHealth()<< endl;	
+}
+void Boss::loseHealth(double playerAttack) {
+	cout << "The Boss has lost " << playerAttack << " health" << endl;
+	cout << "The Boss has " << this->health - playerAttack << " health" << endl;
+	this->health = this->health - playerAttack;
+}
+int Boss::getHealth() {
+	return this->health;
+}
+int Boss::getDamage() {
+	return this->damage();
 }
