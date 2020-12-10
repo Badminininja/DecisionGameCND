@@ -240,9 +240,9 @@ bool ExiledMemberBattle(Character* player) {
     Dice20App* SpecialDice = new Dice20App(0, 0);
     Dice20App* RunDice = new Dice20App(10, bias);
     while((player->getHealth() > 0) || exiledObj->getHealth() > 0) {
-        cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+        cout << "Battle Scene: " << player->getName() << " vs Exiled Member" << endl;
         cout << "Player health: " << player->getHealth() << endl;
-        cout << "Goblin health: " << exiledObj->getHealth() << endl;
+        cout << "Exiled Member: " << exiledObj->getHealth() << endl;
         cout << "Enter one of the numbers displayed below as one of your options: " << endl;
         cout << "Enter 1 to use regular attack" << endl;
         cout << "Enter 2 to use a special attack" << endl;
@@ -271,9 +271,9 @@ bool ExiledMemberBattle(Character* player) {
                     else {
                         cout << "You don't have a health item." << endl;
                         cout << "Enter another option: " << endl;
-                        cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+                        cout << "Battle Scene: " << player->getName() << " vs Exiled Member" << endl;
                         cout << "Player health: " << player->getHealth() << endl;
-                        cout << "Goblin health: " << exiledObj->getHealth() << endl;
+                        cout << "Exiled Member health: " << exiledObj->getHealth() << endl;
                         cout << "Enter one of the numbers displayed below as one of your options: " << endl;
                         cout << "Enter 1 to use regualar attack" << endl;
                         cout << "Enter 2 to use a special attack" << endl;
@@ -296,9 +296,9 @@ bool ExiledMemberBattle(Character* player) {
             }
             else {
                 cout << "Error: Invalid input" << endl;
-                cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+                cout << "Battle Scene: " << player->getName() << " vs Exiled Member" << endl;
                 cout << "Player health: " << player->getHealth() << endl;
-                cout << "Goblin health: " << exiledObj->getHealth() << endl;
+                cout << "Exiled Member health: " << exiledObj->getHealth() << endl;
                 cout << "Enter one of the numbers displayed below as one of your options: " << endl;
                 cout << "Enter 1 to use regualar attack" << endl;
                 cout << "Enter 2 to use a special attack" << endl;
@@ -313,17 +313,16 @@ bool ExiledMemberBattle(Character* player) {
 			exiledObj->boost_health();
 		}
 		else {
-			exiledDice->setBias(2);                                                                                  
-			exiledDice->roll();                                                                                                     
-			if (exiledDice->succeed()) {                                                                                             
-			exiledObj->special_attack(player);                                                                                              
-			
-}
+			exiledDice->setBias(2);
+			exiledDice->roll();
+			if (exiledDice->succeed()) {
+                exiledObj->special_attack(player);
+            }
 			else {
-				 cout << "The Exiled Member missed his attack" << endl;				
+                cout << "The Exiled Member missed his attack" << endl;
 			} 
-			exiledDice->setBias(0); 
-		}
+                exiledDice->setBias(0);
+        }
 	}
 	else {
             exiledDice->setBias(2);
@@ -334,8 +333,8 @@ bool ExiledMemberBattle(Character* player) {
             else {
                 cout << "The Exiled Member missed his attack" << endl;
             }
-	exiledDice->setBias(0);
-	}
+            exiledDice->setBias(0);
+        }
     }
 	if (player->getHealth() <= 0) {
 		return false;
@@ -353,9 +352,9 @@ bool BossBattle(Character* player) {
     Dice20App* RunDice = new Dice20App(10, bias);
     bool reaction = false;
     while((player->getHealth() > 0) || bossObj->getHealth() > 0) {
-        cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+        cout << "Battle Scene: " << player->getName() << " vs Boss" << endl;
         cout << "Player health: " << player->getHealth() << endl;
-        cout << "Goblin health: " << bossObj->getHealth() << endl;
+        cout << "Boss health: " << bossObj->getHealth() << endl;
         cout << "Enter one of the numbers displayed below as one of your options: " << endl;
         cout << "Enter 1 to use regular attack" << endl;
         cout << "Enter 2 to use a special attack" << endl;
@@ -404,9 +403,9 @@ bool BossBattle(Character* player) {
                     else {
                         cout << "You don't have a health item." << endl;
                         cout << "Enter another option: " << endl;
-                        cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+                        cout << "Battle Scene: " << player->getName() << " vs Boss" << endl;
                         cout << "Player health: " << player->getHealth() << endl;
-                        cout << "Goblin health: " << bossObj->getHealth() << endl;
+                        cout << "Boss health: " << bossObj->getHealth() << endl;
                         cout << "Enter one of the numbers displayed below as one of your options: " << endl;
                         cout << "Enter 1 to use regualar attack" << endl;
                         cout << "Enter 2 to use a special attack" << endl;
@@ -429,9 +428,9 @@ bool BossBattle(Character* player) {
             }
             else {
                 cout << "Error: Invalid input" << endl;
-                cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+                cout << "Battle Scene: " << player->getName() << " vs Boss" << endl;
                 cout << "Player health: " << player->getHealth() << endl;
-                cout << "Goblin health: " << bossObj->getHealth() << endl;
+                cout << "Boss health: " << bossObj->getHealth() << endl;
                 cout << "Enter one of the numbers displayed below as one of your options: " << endl;
                 cout << "Enter 1 to use regualar attack" << endl;
                 cout << "Enter 2 to use a special attack" << endl;
@@ -449,15 +448,15 @@ bool BossBattle(Character* player) {
             else {
                 cout << "The Boss missed his attack" << endl;
             }
+            bossDice->setBias(0);
         }
     }
-if (player->getHealth() <= 0) {
-	return false;
-}
-else {
-
-	return true;
-}
+    if (player->getHealth() <= 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 
