@@ -14,6 +14,17 @@ TEST(Dice20, SimpleCreation) {
 	EXPECT_EQ(dice->getCurrentNumber(), (-1));
 }
 
+TEST(Dice20, TestSucceed) {
+        Dice20App* dice = new Dice20App(5, 2);
+	dice->setCurrentNumber(15);
+        dice->print();
+
+        EXPECT_EQ(dice->getNumberToBeat(), 5);
+        EXPECT_EQ(dice->getBias(), 2);
+        EXPECT_EQ(dice->getCurrentNumber(), 15);
+	EXPECT_EQ(dice->succeed(), true);
+}
+
 TEST(Dice20, DifferentConstructor) {
         Dice20App* dice = new Dice20App(6,3);
         dice->print();

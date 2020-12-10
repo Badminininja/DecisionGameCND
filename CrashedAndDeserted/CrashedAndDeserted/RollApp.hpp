@@ -23,6 +23,7 @@ class RollApp {
 		virtual int getNumberToBeat() = 0;
 		virtual int getBias() = 0;
 		virtual int getCurrentNumber() = 0;
+		virtual bool succeed() = 0;
 };
 
 #endif

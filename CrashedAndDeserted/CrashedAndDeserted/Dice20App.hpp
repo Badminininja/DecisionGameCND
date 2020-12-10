@@ -27,6 +27,7 @@ class Dice20App : public RollApp {
 		int  getCurrentNumber();	
 		int  getNumberToBeat();
 		int  getBias();
+		bool succeed();
 
 		void setCurrentNumber(int);
 		void setNumberToBeat(int);
