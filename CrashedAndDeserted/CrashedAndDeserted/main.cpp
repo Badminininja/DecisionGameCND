@@ -9,7 +9,9 @@
 #include "characterRace.hpp"
 #include "animalRace.hpp"
 #include "humanRace.hpp"
-
+#include "ExiledMember.hpp"
+#include "Boss.hpp"
+#include "Goblin.hpp"
 using namespace std;
 
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
@@ -119,7 +121,7 @@ bool GoblinBattle(Character* player) {
 		cout << "Enter one of the numbers displayed below as one of your options: " << endl;
 		cout << "Enter 1 to use regular attack" << endl;
 		cout << "Enter 2 to use a special attack" << endl;
-		cout << "Enter 3 to use a health item" endl;
+		cout << "Enter 3 to use a health item" << endl;
 		cout << "Enter 4 to run away" << endl;
 		int userInput = -1;
 		cin >> userInput;
@@ -139,7 +141,7 @@ bool GoblinBattle(Character* player) {
 					}
 					else {
 						cout << "You don't have a health item." << endl;
-						cout << "Enter another option: " << endl
+						cout << "Enter another option: " << endl;
 					}	
 			}
 			else if (userInput == 4) {	//uses Joseph's random func. class to determine if runaway is successful
@@ -152,7 +154,7 @@ bool GoblinBattle(Character* player) {
 				cout << "Enter one of the numbers displayed below as one of your options: " << endl;
 				cout << "Enter 1 to use regualar attack" << endl;
 				cout << "Enter 2 to use a special attack" << endl;
-				cout << "Enter 3 to use a health item" endl;
+				cout << "Enter 3 to use a health item"<< endl;
 				cout << "Enter 4 to run away" << endl;
 				int userInput = -1;
 				cin >> userInput;

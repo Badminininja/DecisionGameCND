@@ -1,7 +1,7 @@
 #ifndef CLASS_BOSS
 #define CLASS_BOSS
 #include "character.hpp"
-using namespace std;
+//using namespace std;
 
 class Boss {
 	private:
@@ -9,14 +9,14 @@ class Boss {
 		//double attackDamage;
 		int health = 25;
 		int damage = 5;
-	protected:
-		Boss();
+
 	public:
+		Boss();
 		static Boss* get_boss_instance();
 		double attackDamage(Character*);
 		void reflectDamage(double, Character*);
 		void loseHealth(double);
 		int getHealth();
-		int getDamge();
+		int getDamage();
 };
 #endif

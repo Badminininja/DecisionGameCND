@@ -9,11 +9,12 @@ class Goblin {
 		static Goblin* goblin_instance;
 		double attack_power = 4;
 		double health = 20;
-	protected:
-		Goblin(); 
+//	protected:
+//		Goblin(); 
 	public:
-		static Goblin* get_troll_instance();
-		double attack_power_indicator(Character*);
+		Goblin();
+		static Goblin* get_goblin_instance();
+		void attack_power_indicator(Character*);
 		void deflect_damage(double, Character*);
 		void loseHealth(double);
 		int getHealth();

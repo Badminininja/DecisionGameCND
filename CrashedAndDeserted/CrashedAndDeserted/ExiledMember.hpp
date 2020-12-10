@@ -1,7 +1,7 @@
 #ifndef CLASS_EXILED_MEMBER
 #define CLASS_EXILED_MEMBER
 #include <iostream>
-#include "character"
+#include "character.hpp"
 using namespace std;
 
 class ExiledMember {
@@ -16,7 +16,7 @@ class ExiledMember {
 		static ExiledMember* get_exiled_instance();
 		void boost_health();
 		void loseHealth(double);
-		void special_attack(Character*);	
+		double special_attack(Character*);	
 		int getDamage();
 		int getHealth();
 };
