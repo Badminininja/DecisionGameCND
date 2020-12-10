@@ -118,6 +118,11 @@ int firstScene(Character* userCharacter, vector<string> progress) {
 
 bool GoblinBattle(Character* player) {
 	Goblin* goblinObj = new Goblin();
+	double bias = player->getIQ() - goblinObj->getHealth();
+	Dice20App* GobDice = new Dice20App(11, 0);
+	Dice20App* SpecialDice = new Dice20App(0, 0);
+	Dice20App* RunDice = new Dice20App(10, bias);
+	bool reaction = false;
 	while((player->getHealth() > 0) || goblinObj->getHealth() > 0) {
 		cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
 		cout << "Player health: " << player->getHealth() << endl;
@@ -132,11 +137,35 @@ bool GoblinBattle(Character* player) {
 		while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
 			if (userInput == 1) {
 				double getDamage = player->attack();
-				goblinObj->loseHealth(getDamage);
+				GobDice->roll();
+				if (GobDice->succeed()) {
+					goblinObj->deflect_damage(getDamage);
+					reaction = true;
+				}
+				else {
+					reaction = false;			
+					goblinObj->loseHealth(getDamage);
+				}
 			}
 			else if (userInput == 2) {
 				 double getDamage = player->specialAttack();
-				 goblinObj->loseHealth(getDamage);
+				 SpecialDice->roll();
+				if (SpecialDice->succeed()) {
+					SpecialDice->setNumberToBeat(SpecialDice->getNumberToBeat()+3);
+					GobDice->roll();
+					if (GobDice->succeed()) {
+						goblinObj->deflect_damage(getDamage);
+						reaction = true;
+					}
+					else {
+						reaction = false;
+						goblinObj->loseHealth(getDamage);
+					}
+				}
+				else {
+					cout << "You missed your special attack" << endl;
+					reaction = false;
+				}
  			}
 			else if (userInput == 3) {
 				bool checker = player->getHealthItem();
@@ -145,10 +174,29 @@ bool GoblinBattle(Character* player) {
 					}
 					else {
 						cout << "You don't have a health item." << endl;
-                        cout << "Enter another option: " << endl;
+                        			cout << "Enter another option: " << endl;
+						cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
+						cout << "Player health: " << player->getHealth() << endl;
+						cout << "Goblin health: " << exiledObj->getHealth() << endl;
+						cout << "Enter one of the numbers below as one of your options: " << endl;
+						cout << "Enter 1 to use regualar attack" << endl;
+						cout << "Enter 2 to use a special attack" << endl;
+						cout << "Enter 3 to use a health item" << endl;
+						cout << "Enter 4 to run away" << endl;
+						cin >> userInput;
 					}	
 			}
-			else if (userInput == 4) {	//uses Joseph's random func. class to determine if runaway is successful
+			else if (userInput == 4) {
+				bias = player->getIQ() - goblinObj->getHealth();	
+				runDice->setBias(bias);
+				runDice->roll();
+				if (runDice->succeed()) {
+					cout << "You've successfully run away from battle" << endl;
+					return;
+				}
+				else {
+					cout << "You failed to run away" << endl;
+				}	
 			}
 			else {
 				cout << "Error: Invalid input" << endl;
@@ -164,11 +212,26 @@ bool GoblinBattle(Character* player) {
 				cin >> userInput;
 			}
 		}
+		if (!reaction) {
+			GobDice->setBias(2);
+			GobDice->roll();
+			if (GobDice->succeed()) {
+				gobObj->attack_power_indicator(player);
+			}
+			else {
+				cout << "Goblin missed his attack" << endl;	
+			}
+		}
 	} 
 }
 
 bool ExiledMemberBattle(Character* player) {
     ExiledMember* exiledObj = new ExiledMember();
+    double bias = player->getIQ() - exiledObj->getHealth();
+    Dice20App* exiledDice = new Dice20App(11, 0);
+    Dice20App* SpecialDice = new Dice20App(0, 0);
+    Dice20App* RunDice = new Dice20App(10, bias);
+    bool reaction = false;
     while((player->getHealth() > 0) || exiledObj->getHealth() > 0) {
         cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
         cout << "Player health: " << player->getHealth() << endl;
@@ -209,6 +272,16 @@ bool ExiledMemberBattle(Character* player) {
                     }
             }
             else if (userInput == 4) {    //uses Joseph's random func. class to determine if runaway is successful
+		bias = player->getIQ() - exiledObj->getHealth();
+		runDice->setBias(bias);
+		runDice->roll();
+		if (runDice->succeed()) {
+			cout << "You've successfully run away from battle" << endl;
+			return;
+		}
+		else {
+			cout << "You failed to run away" << endl;
+		} 
             }
             else {
                 cout << "Error: Invalid input" << endl;
@@ -228,6 +301,11 @@ bool ExiledMemberBattle(Character* player) {
 
 bool BossBattle(Character* player) {
     Boss* bossObj = new Boss();
+    double bias = player->getIQ() - bossObj->getHealth();
+    Dice20App* bossDice = new Dice20App(11, 0);
+    Dice20App* SpecialDice = new Dice20App(0, 0);
+    Dice20App* RunDice = new Dice20App(10, bias);
+    bool reaction = false;
     while((player->getHealth() > 0) || bossObj->getHealth() > 0) {
         cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
         cout << "Player health: " << player->getHealth() << endl;
@@ -267,7 +345,17 @@ bool BossBattle(Character* player) {
                         cin >> userInput;
                     }
             }
-            else if (userInput == 4) {    //uses Joseph's random func. class to determine if runaway is successful
+            else if (userInput == 4) {
+		 bias = player->getIQ() - bossObj->getHealth();
+		 runDice->setBias(bias);
+		 runDice->roll();
+		 if (runDice->succeed()) {
+			cout << "You've successfully run away from battle" << endl;
+			return;
+		}
+		else {
+			cout << "You failed to run away" << endl;
+		}
             }
             else {
                 cout << "Error: Invalid input" << endl;
