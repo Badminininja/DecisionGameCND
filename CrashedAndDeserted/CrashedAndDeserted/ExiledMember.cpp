@@ -20,9 +20,14 @@ double ExiledMember::special_attack(Character* player) {
 	player->getDamage(this->damage);
 	return this->damage;
 }
-int getDamage() {
+int ExiledMember::getDamage() {
 	return this->damage;
 }
-int getHealth(){
+int ExiledMember::getHealth(){
 	return this->health;
+}
+void ExiledMember::boost_health() {
+	this->health = this->health + 2;
+	cout << "Exiled Member health was boosted by 2" << endl;
+	cout << "Exiled Member's health now: " << this->health << endl;
 }
