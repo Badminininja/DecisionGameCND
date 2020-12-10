@@ -1,7 +1,7 @@
 #ifndef CLASS_EXILED_MEMBER
 #define CLASS_EXILED_MEMBER
 #include <iostream>
-#include "character"
+#include "character.hpp"
 using namespace std;
 
 class ExiledMember {
