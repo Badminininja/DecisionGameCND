@@ -1,5 +1,5 @@
 #ifndef __NORMAL_ROLL_TEST_HPP
-#define __NORMLA_ROLL_TEST_HPP
+#define __NORMAL_ROLL_TEST_HPP
 #include "gtest/gtest.h"
 
 
