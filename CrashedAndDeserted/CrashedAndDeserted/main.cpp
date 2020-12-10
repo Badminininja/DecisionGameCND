@@ -225,6 +225,12 @@ bool GoblinBattle(Character* player) {
             GobDice->setBias(0);
 		}
 	} 
+	if (player->getHealth() <= 0) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 bool ExiledMemberBattle(Character* player) {
@@ -301,6 +307,25 @@ bool ExiledMemberBattle(Character* player) {
                 cin >> userInput;
             }
         }
+	if (exiledObj->getHealth() <= 12) {
+		exiledDice->roll();
+		if(exiledDice->succeed()) {
+			exiledObj->boost_health();
+		}
+		else {
+			exiledDice->setBias(2);                                                                                  
+			exiledDice->roll();                                                                                                     
+			if (exiledDice->succeed()) {                                                                                             
+			exiledObj->special_attack(player);                                                                                              
+			
+}
+			else {
+				 cout << "The Exiled Member missed his attack" << endl;				
+			} 
+			exiledDice->setBias(0); 
+		}
+	}
+	else {
             exiledDice->setBias(2);
             exiledDice->roll();
             if (exiledDice->succeed()) {
@@ -309,7 +334,15 @@ bool ExiledMemberBattle(Character* player) {
             else {
                 cout << "The Exiled Member missed his attack" << endl;
             }
+	exiledDice->setBias(0);
+	}
     }
+	if (player->getHealth() <= 0) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 bool BossBattle(Character* player) {
@@ -418,6 +451,13 @@ bool BossBattle(Character* player) {
             }
         }
     }
+if (player->getHealth() <= 0) {
+	return false;
+}
+else {
+
+	return true;
+}
 }
 
 
