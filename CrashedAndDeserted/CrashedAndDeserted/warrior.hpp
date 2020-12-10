@@ -26,7 +26,7 @@ class Warrior : public Character{
         virtual double specialAttack() = 0;
         virtual void healthIncrease() = 0;
         virtual void damaged(double damage) = 0;
-        virtual bool runAway(double chance, double opHealth) = 0;
+        virtual double getIQ() {return this->IQ;}
         virtual void setHealthItem(bool val) {this->healthItem = val;}
         virtual std::string getName() {return this->name;}
         virtual bool getHealthItem() {return healthItem;}

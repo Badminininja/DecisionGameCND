@@ -27,7 +27,7 @@ class AnimalMage : public Mage {
         virtual double specialAttack();
         virtual void healthIncrease();
         virtual void damaged(double damage);
-        virtual bool runAway(double chance, double opHealth);
+        virtual double getIQ() {return this->IQ;}
         virtual void setHealthItem(bool val) {this->healthItem = val;}
         virtual std::string getName() {return this->name;}
         virtual bool getHealthItem() {return healthItem;}
