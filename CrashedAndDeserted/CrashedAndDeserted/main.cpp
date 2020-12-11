@@ -35,6 +35,7 @@ void printProgress(vector<string> progress);
 
 
 int main() {
+	srand(time(NULL));
     CharacterRace* typeCharacter;
     Character* userCharacter;
     int sceneNum;
