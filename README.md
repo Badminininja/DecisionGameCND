@@ -22,13 +22,14 @@
  ![StrategyPattern](https://user-images.githubusercontent.com/5094397/99346702-1df1aa00-284a-11eb-9a93-7786b39f9302.PNG)
  ![SingletonPat](https://user-images.githubusercontent.com/5094397/101873803-79a70e80-3b3c-11eb-89a9-886a5635f624.PNG)
 
- > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![screen1](https://user-images.githubusercontent.com/5094397/101889374-2f318c00-3b54-11eb-9de3-c1e845d83979.png)
+ ![screen2](https://user-images.githubusercontent.com/5094397/101889377-2fca2280-3b54-11eb-9fef-46059a88c4e0.png)
+ ![screen3](https://user-images.githubusercontent.com/5094397/101889378-2fca2280-3b54-11eb-87b8-c63438aa98f0.png)
+ ![screen4](https://user-images.githubusercontent.com/5094397/101889379-2fca2280-3b54-11eb-8f31-a1a80c5959c2.png)
+ ![screen5](https://user-images.githubusercontent.com/5094397/101889380-3062b900-3b54-11eb-8095-7cbe7f5fd04a.png)
+ ![screen6](https://user-images.githubusercontent.com/5094397/101889382-3062b900-3b54-11eb-9095-daba4e748e15.png)
+ ![screen7](https://user-images.githubusercontent.com/5094397/101889386-30fb4f80-3b54-11eb-9e9a-74c826850fb1.png)
  ## Installation/Usage
  * First, clone the repository
  * Open the terminal and run cd ./CrashedAndDesertred/CrashedAndDeserted 
