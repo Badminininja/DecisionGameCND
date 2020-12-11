@@ -1,6 +1,7 @@
 #ifndef CLASS_BOSS
 #define CLASS_BOSS
 #include "character.hpp"
+#include <iostream>
 using namespace std;
 
 class Boss {
