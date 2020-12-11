@@ -34,7 +34,7 @@ class Warrior : public Character{
         virtual void increaseIQ(double IQ) {this->IQ += IQ;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
-        virtual void increaseSpells(double smite) {this->smite += smite;}
+        virtual void increaseSmite(double smite) {this->smite += smite;}
         virtual void stats() = 0;
 };
 

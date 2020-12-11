@@ -33,6 +33,8 @@ class Character {
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
         virtual void stats() = 0;
+        virtual void increaseSpells(double special) {}
+        virtual void increaseSmite(double special) {}
 };
 
 #endif /* character_h */

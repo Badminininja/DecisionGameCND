@@ -35,7 +35,7 @@ class AnimalWarrior : public Warrior {
         virtual double getHealth() {return this->health;}
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
-        virtual void increaseSpells(double smite) {this->smite += smite;}
+        virtual void increaseSmite(double smite) {this->smite += smite;}
         virtual void stats();
 };
 
