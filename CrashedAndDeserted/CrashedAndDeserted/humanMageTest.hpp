@@ -44,11 +44,11 @@ TEST(humanMageTest, IQTest) {
 TEST(humanMageTest, healthTest) {
     CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
-    EXPECT_DOUBLE_EQ(player->getHealth(), 20.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 35.0);
     player->increaseHealth(3.0);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 23.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 38.0);
     player->healthIncrease();
-    EXPECT_DOUBLE_EQ(player->getHealth(), 26.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 41.0);
 }
 
 TEST(humanMageTest, nameTest) {
@@ -70,7 +70,7 @@ TEST(humanMageTest, damageTest) {
     Character* player = playerType->createMage("aro");
     double damage = 5.0;
     player->damaged(damage);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 15.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 30.0);
 }
 
 #endif /* humanMageTest_h */

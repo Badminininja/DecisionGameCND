@@ -44,11 +44,11 @@ TEST(humanWarriorTest, IQTest) {
 TEST(humanWarriorTest, healthTest) {
     CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
-    EXPECT_DOUBLE_EQ(player->getHealth(), 16.5);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 29.5);
     player->increaseHealth(3.0);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 19.5);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 32.5);
     player->healthIncrease();
-    EXPECT_DOUBLE_EQ(player->getHealth(), 21.5);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 34.5);
 }
 
 TEST(humanWarriorTest, nameTest) {
@@ -70,7 +70,7 @@ TEST(humanWarriorTest, damageTest) {
     Character* player = playerType->createWarrior("aro");
     double damage = 5.0;
     player->damaged(damage);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 11.5);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 24.5);
 }
 
 
