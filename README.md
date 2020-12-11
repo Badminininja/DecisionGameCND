@@ -30,7 +30,6 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
  * First, clone the repository
  * Go to: cd ./CrashedAndDesertred/CrashedAndDeserted
  * Perform the following actions in order: 
