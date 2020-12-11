@@ -73,6 +73,15 @@ int main() {
     }else {
 	cout << "NO THIRD SCENE FOUND" <<endl;
     }
+
+	if(endingScene == "THE END"){
+		cout << "After defeating the boss of this island, you triumphantly climb the tower and ride his helicopter. Of course you, don't actually have any keys so you make your way to search his room and bring some jewellery while you were there. Once you get in the coptor, you fly high and start to search for where civilization is again."<<endl;
+		cout << "Congratz you won the game"<<endl;
+	}else if(endingScene == "Death End Route"){
+		cout << "Unfortunately you got the bad end"<<endl;
+	}else if(endingScene == "Secret Route End"){
+		cout << "Congratz, you found the secret route"<<endl;
+	}
 	
 	return 0;
 }
@@ -563,7 +572,7 @@ void GoblinBattle(Character* player) {
 	Dice20App* RunDice = new Dice20App(10, bias);
 		RunDice->SetRollFunction();
 	bool reaction = false;
-	while((player->getHealth() > 0) || goblinObj->getHealth() > 0) {
+	while((player->getHealth() > 0) && goblinObj->getHealth() > 0) {
 		cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
 		cout << "Player health: " << player->getHealth() << endl;
 		cout << "Goblin health: " << goblinObj->getHealth() << endl; 
@@ -577,28 +586,33 @@ void GoblinBattle(Character* player) {
 		while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
 		cin >> userInput;
 			if (userInput == 1) {
-				double getDamage = player->attack();
+				
 				GobDice->roll();
 				if (GobDice->succeed()) {
+					 double getDamage = player->attack();
 					goblinObj->deflect_damage(getDamage, player);
 					reaction = true;
 				}
 				else {
+					 double getDamage = player->attack();
 					reaction = false;			
 					goblinObj->loseHealth(getDamage);
 				}
 			}
 			else if (userInput == 2) {
-				 double getDamage = player->specialAttack();
+
 				 SpecialDice->roll();
 				if (SpecialDice->succeed()) {
 					SpecialDice->setNumberToBeat(SpecialDice->getNumberToBeat()+3);
 					GobDice->roll();
 					if (GobDice->succeed()) {
+						 double getDamage = player->specialAttack();
+
 						goblinObj->deflect_damage(getDamage, player);
 						reaction = true;
 					}
 					else {
+						 double getDamage = player->specialAttack();
 						reaction = false;
 						goblinObj->loseHealth(getDamage);
 					}
@@ -651,6 +665,12 @@ void GoblinBattle(Character* player) {
 				cout << "Enter 4 to run away" << endl;
 			}
 		}
+		 if (goblinObj->getHealth() <= 0) {
+              		cout << "The Goblin has died" <<endl;
+			 cout << "=========BATTLE OVER=========="<<endl;
+			return;
+	        }
+	
 		if (!reaction) {
 			GobDice->setBias(2);
 			GobDice->SetRollFunction();
@@ -664,7 +684,8 @@ void GoblinBattle(Character* player) {
             GobDice->setBias(0);
 			GobDice->SetRollFunction();
 		}
-	} 
+	}
+	cout << "=========BATTLE OVER=========="<<endl; 
 	if (player->getHealth() <= 0) {
 		cout << "You Have Died"<<endl;
 		cout << "GAME OVER" <<endl;
@@ -762,7 +783,13 @@ void ExiledMemberBattle(Character* player) {
                 cout << "Enter 4 to run away" << endl;
             }
         }
-	
+	if (exiledObj->getHealth() <= 0) {
+                 cout << "The Exile has died" <<endl;
+                 cout << "=========BATTLE OVER=========="<<endl;
+
+		return;
+        }
+
 	if (exiledObj->getHealth() <= 12) {
 		exiledDice->roll();
 		if(exiledDice->succeed()) {
@@ -797,6 +824,7 @@ void ExiledMemberBattle(Character* player) {
 	    exiledDice->SetRollFunction();
         }
     }
+	cout << "===============BATTLE OVER============="<<endl;
 	if (player->getHealth() <= 0) {
 		cout << "You Have Died"<<endl;
                 cout << "GAME OVER" <<endl;
@@ -817,7 +845,7 @@ void BossBattle(Character* player) {
     Dice20App* RunDice = new Dice20App(10, bias);
 	RunDice->SetRollFunction();
     bool reaction = false;
-    while((player->getHealth() > 0) || bossObj->getHealth() > 0) {
+    while((player->getHealth() > 0) && bossObj->getHealth() > 0) {
         cout << "Battle Scene: " << player->getName() << " vs Boss" << endl;
         cout << "Player health: " << player->getHealth() << endl;
         cout << "Boss health: " << bossObj->getHealth() << endl;
@@ -831,29 +859,36 @@ void BossBattle(Character* player) {
         while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
 		cin >> userInput;
             if (userInput == 1) {
-                double getDamage = player->attack();
+
                 bossDice->roll();
                 if (bossDice->succeed()) {
+			 double getDamage = player->attack();
+
                     bossObj->reflectDamage(getDamage, player);
                     reaction = true;
                 }
                 else {
                     reaction = false;
+			 double getDamage = player->attack();
+
                     bossObj->loseHealth(getDamage);
                 }
             }
             else if (userInput == 2) {
-                 double getDamage = player->specialAttack();
+ 
                  SpecialDice->roll();
                  if (SpecialDice->succeed()) {
                      SpecialDice->setNumberToBeat(SpecialDice->getNumberToBeat()+3);
                      bossDice->roll();
                      if (bossDice->succeed()) {
+			 double getDamage = player->specialAttack();
+
                          bossObj->reflectDamage(getDamage, player);
                          reaction = true;
                      }
                      else {
-                         reaction = false;
+                         double getDamage = player->specialAttack();
+ 			reaction = false;
                          bossObj->loseHealth(getDamage);
                      }
                  }
@@ -906,6 +941,14 @@ void BossBattle(Character* player) {
                 cout << "Enter 4 to run away" << endl;
             }
         }
+	if (bossObj->getHealth() <= 0) {
+       		 cout << "The Boss has died" <<endl;
+                 cout << "=========BATTLE OVER=========="<<endl;
+ 
+		return;
+	    }
+
+	
         if (!reaction) {
             bossDice->setBias(2);
 		bossDice->SetRollFunction();
@@ -920,6 +963,7 @@ void BossBattle(Character* player) {
 		bossDice->SetRollFunction();
         }
     }
+	cout << "=====================Battle Over======================" <<endl;
     if (player->getHealth() <= 0) {
         cout << "You Have Died"<<endl;
         cout << "GAME OVER" <<endl;

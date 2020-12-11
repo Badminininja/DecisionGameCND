@@ -75,7 +75,7 @@ void Dice20App :: setBias(int BIAS) {
 }
 
 bool Dice20App :: succeed(){
-	if(currentNumber >= numberToBeat){
+	if(currentNumber > numberToBeat){
 		return true;
 
 	}

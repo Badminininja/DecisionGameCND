@@ -22,7 +22,7 @@ class HumanMage : public Mage {
         double health;
         double spells;
     public:
-        HumanMage(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(6.0), basicAttack(4.0), health(20.0), spells(6.5) {}
+        HumanMage(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(6.0), basicAttack(4.0), health(35.0), spells(6.5) {}
         virtual double attack();
         virtual double specialAttack();
         virtual void healthIncrease();

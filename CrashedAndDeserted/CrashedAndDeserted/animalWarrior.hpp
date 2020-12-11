@@ -22,7 +22,7 @@ class AnimalWarrior : public Warrior {
         double health;
         double smite;
     public:
-        AnimalWarrior(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(4.0), basicAttack(5.5), health(18.0), smite(7.0) {}
+        AnimalWarrior(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(4.0), basicAttack(5.5), health(35.0), smite(7.0) {}
         virtual double attack();
         virtual double specialAttack();
         virtual void healthIncrease();

@@ -22,7 +22,7 @@ class AnimalMage : public Mage {
         double health;
         double spells;
     public:
-        AnimalMage(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(4.5), basicAttack(4.5), health(22.0), spells(5.0) {}
+        AnimalMage(std::string name, std::string race) : name(name), race(race), healthItem(false), IQ(4.5), basicAttack(4.5), health(37.0), spells(5.0) {}
         virtual double attack();
         virtual double specialAttack();
         virtual void healthIncrease();
