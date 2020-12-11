@@ -43,7 +43,7 @@
    * Selecting Human Mage
      ![HumanMage](https://user-images.githubusercontent.com/5094397/101886244-11fabe80-3b50-11eb-953d-7d29b90c0715.png)
    * Selecting Animal Mage
-    ![AnimalMage](https://user-images.githubusercontent.com/5094397/101886246-12935500-3b50-11eb-855f-d487f12a83b5.png)
+     ![AnimalMage](https://user-images.githubusercontent.com/5094397/101887694-10ca9100-3b52-11eb-88ea-7f9abb01607d.png)
    * Selecting Animal Warrior
     ![AnimalWarrior](https://user-images.githubusercontent.com/5094397/101886249-13c48200-3b50-11eb-9620-72bed06132b6.png)
    * Selecting Human Warrior
