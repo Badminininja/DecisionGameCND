@@ -573,8 +573,9 @@ void GoblinBattle(Character* player) {
 		cout << "Enter 3 to use a health item" << endl;
 		cout << "Enter 4 to run away" << endl;
 		int userInput = -1;
-		cin >> userInput;
+		
 		while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
+		cin >> userInput;
 			if (userInput == 1) {
 				double getDamage = player->attack();
 				GobDice->roll();
@@ -614,7 +615,7 @@ void GoblinBattle(Character* player) {
 					}
 					else {
 						cout << "You don't have a health item." << endl;
-            cout << "Enter another option: " << endl;
+            					cout << "Enter another option: " << endl;
 						cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
 						cout << "Player health: " << player->getHealth() << endl;
 						cout << "Goblin health: " << goblinObj->getHealth() << endl;
@@ -623,7 +624,6 @@ void GoblinBattle(Character* player) {
 						cout << "Enter 2 to use a special attack" << endl;
 						cout << "Enter 3 to use a health item" << endl;
 						cout << "Enter 4 to run away" << endl;
-						cin >> userInput;
 					}	
 			}
 			else if (userInput == 4) {
@@ -649,8 +649,6 @@ void GoblinBattle(Character* player) {
 				cout << "Enter 2 to use a special attack" << endl;
 				cout << "Enter 3 to use a health item"<< endl;
 				cout << "Enter 4 to run away" << endl;
-				int userInput = -1;
-				cin >> userInput;
 			}
 		}
 		if (!reaction) {
@@ -737,7 +735,6 @@ void ExiledMemberBattle(Character* player) {
                         cout << "Enter 2 to use a special attack" << endl;
                         cout << "Enter 3 to use a health item" << endl;
                         cout << "Enter 4 to run away" << endl;
-                        cin >> userInput;
                     }
             }
             else if (userInput == 4) {
@@ -830,8 +827,9 @@ void BossBattle(Character* player) {
         cout << "Enter 3 to use a health item" << endl;
         cout << "Enter 4 to run away" << endl;
         int userInput = -1;
-        cin >> userInput;
+        
         while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
+		cin >> userInput;
             if (userInput == 1) {
                 double getDamage = player->attack();
                 bossDice->roll();
@@ -880,7 +878,7 @@ void BossBattle(Character* player) {
                         cout << "Enter 2 to use a special attack" << endl;
                         cout << "Enter 3 to use a health item" << endl;
                         cout << "Enter 4 to run away" << endl;
-                        cin >> userInput;
+
                     }
             }
             else if (userInput == 4) {
@@ -906,7 +904,6 @@ void BossBattle(Character* player) {
                 cout << "Enter 2 to use a special attack" << endl;
                 cout << "Enter 3 to use a health item" << endl;
                 cout << "Enter 4 to run away" << endl;
-                cin >> userInput;
             }
         }
         if (!reaction) {
