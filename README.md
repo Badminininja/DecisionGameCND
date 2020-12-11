@@ -37,8 +37,21 @@
  * make
  * ./game
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  * To ensure that the large number of classes we implemented is error free, we used googletest. With the help of the googeltest, we created unit tests and tested every single function in our classes and verified that they passed their tests through running the test executable.
  ![Code](https://user-images.githubusercontent.com/57073212/101874740-4ebdba00-3b3e-11eb-8491-c73167592c33.PNG)
  * Main Function Tests
+   * Selecting Human Mage
+  ![HumanMage](https://user-images.githubusercontent.com/5094397/101886244-11fabe80-3b50-11eb-953d-7d29b90c0715.png)
+   * Selecting Animal Mage
+  ![AnimalMage](https://user-images.githubusercontent.com/5094397/101886246-12935500-3b50-11eb-855f-d487f12a83b5.png)
+   * Selecting Animal Warrior
+  ![AnimalWarrior](https://user-images.githubusercontent.com/5094397/101886249-13c48200-3b50-11eb-9620-72bed06132b6.png)
+   * Selecting Human Warrior
+  ![HumanWarrior](https://user-images.githubusercontent.com/5094397/101886252-14f5af00-3b50-11eb-89b5-6077fc44d796.png)
+   * Battle Scene EX1
+  ![BattleEx1](https://user-images.githubusercontent.com/5094397/101887139-4de25380-3b51-11eb-825c-43abdad90444.png)
+   * Battle Scene EX2
+  ![BattleEx2](https://user-images.githubusercontent.com/5094397/101887146-4fac1700-3b51-11eb-8294-f5b5f27f9609.png)
+
+
  
