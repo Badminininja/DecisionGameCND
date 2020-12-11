@@ -1,18 +1,27 @@
 #ifndef CLASS_BOSS
 #define CLASS_BOSS
 #include "character.hpp"
-//using namespace std;
+using namespace std;
 
 class Boss {
+	//static Boss bossObj = new Boss();
 	private:
 		static Boss* boss_instance;
 		//double attackDamage;
-		double health = 25;
-		double damage = 5;
+		//static Boss bossObj = new Boss();
+		double health = 25.0;
+		double damage = 5.0;
+	protected:
+		//Boss();
 
 	public:
-		Boss();
-		static Boss* get_boss_instance();
+
+		static Boss* get_boss_instance(){
+			if(boss_instance == nullptr) {
+				boss_instance = new Boss();
+			}
+			return boss_instance;			
+		}
 		double attackDamage(Character*);
 		void reflectDamage(double, Character*);
 		void loseHealth(double);

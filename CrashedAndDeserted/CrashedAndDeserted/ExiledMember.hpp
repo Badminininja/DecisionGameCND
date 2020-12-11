@@ -18,7 +18,7 @@ class ExiledMember {
 		void boost_health();
 		void loseHealth(double);
 		double special_attack(Character*);	
-		int getDamage();
-		int getHealth();
+		double getDamage();
+		double getHealth();
 };
 #endif
