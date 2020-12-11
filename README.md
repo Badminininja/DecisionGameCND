@@ -38,6 +38,6 @@
  * ./game
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- * To ensure that the large number of classes we implemented is error free, we used googletest. With the help of the googeltest, we created unit tests and tested every single function in our classes and verified that they passed their tests through testing executable.
+ * To ensure that the large number of classes we implemented is error free, we used googletest. With the help of the googeltest, we created unit tests and tested every single function in our classes and verified that they passed their tests through running the test executable.
  ![Code](https://user-images.githubusercontent.com/57073212/101874740-4ebdba00-3b3e-11eb-8491-c73167592c33.PNG)
  
