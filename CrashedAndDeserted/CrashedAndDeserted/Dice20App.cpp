@@ -11,7 +11,7 @@ Dice20App :: Dice20App(int Beat, int BIAS){
 
 void Dice20App :: print(){
 
-	cout << "Rolled a 6 sided dice with a bias of: "<< bias << endl << "Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
+	cout << "Rolled a 20 sided dice with a bias of: "<< bias << endl << "Number to win is " << numberToBeat<< endl << "you got: " << currentNumber <<endl;	
 }
 
 void Dice20App :: SetRollFunction(){
@@ -37,6 +37,7 @@ void Dice20App :: roll(){
 	if(!RollFunction){
 		throw invalid_argument("NULL");
 	}
+		
 	RollFunction->rolling(this);
 }
 

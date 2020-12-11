@@ -2,6 +2,7 @@
 
 
 void AdvRoll :: rolling(RollApp* RollApp) {
+	srand(time(NULL));
 	int temp;
 	int highestNumber = RollApp->getCurrentNumber();
 	for(unsigned int i = 0; i < RollApp->getBias(); i++){

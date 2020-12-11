@@ -3,6 +3,7 @@
 
 
 void DisAdvRoll :: rolling(RollApp* RollApp){
+	srand(time(NULL));
 	int temp;
 	int lowestNumber = RAND_MAX;
 	int bias = RollApp->getBias() * (-1);

@@ -8,8 +8,8 @@ class ExiledMember {
 	private:
 		static ExiledMember* exiled_instance;
 		double specialAttack;
-		int health = 20;
-		int damage = 4;
+		double health = 20;
+		double damage = 4;
 	//protected:
 	//	ExiledMember();
 	public:

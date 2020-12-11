@@ -28,9 +28,10 @@ string bossSceneFront(Character* userCharacter, vector<string> progress);
 string bossSceneBack(Character* userCharacter, vector<string> progress);
 string deathRoute(Character* userCharacter, vector<string> progress);
 string secretEnding(Character* userCharacter, vector<string> progress);
-bool GoblinBattle(Character* player);
-bool ExiledMemberBattle(Character* player);
-bool BossBattle(Character* player);
+void GoblinBattle(Character* player);
+void ExiledMemberBattle(Character* player);
+void BossBattle(Character* player);
+
 
 int main() {
     CharacterRace* typeCharacter;
@@ -179,6 +180,7 @@ string beachScene(Character* userCharacter, vector<string> progress){
 		}
 		else if (response == 3){
 			cout << "As you walk past him you start to notice how run down his area was, but it’s none of your business. As you walk a few paces past what you could only assume was his area, you start to hear a waterfall nearby and that's when you get stabbed in the back from the guy that was supposedly sleeping. (Player takes damage). The guy was never actually sleeping and you simply showed your back to a potential enemy. You were an exiled on this beach, if he’s there then he must be one too. He loads up a second strike but he you parry it and you guys fight." <<endl;
+			ExiledMemberBattle(userCharacter);
 			return "Waterfall Scene";
 			//call Battle Function
 		}
@@ -229,6 +231,7 @@ string BeachDialogue(Character* userCharacter, vector<string> progress){
 			cout << "How about before I answer that we go into the forest? It's morning and I haven’t had anything to eat and I’m sure you haven’t either. There is a lot of food in the forest as it seems there has been little human intervention." <<endl;
 			//BATTLE TRIGGER
 			cout << "You both start walking into the forest with Tane leading to a place with some good fruit. “You know I remembered the reason why I’m here, before I was knocked out and landed on this beach, I remember a court scene. Heh, yea I was exiled. But you know, that also means you’ve been exiled, and that means you’ve got blood on your hands” As we finish his sentence an arrow shoots, hidden in some bushes and pierces your shoulder, just nearly missing your head. “Tsk, You’re a criminal like me, I can’t trust you” He pulls out his sword and gets ready to fight you." <<endl;
+			
 			return "Waterfall Scene";
 		}
 		else if (response == 5){
@@ -539,8 +542,8 @@ string secretEnding(Character* userCharacter, vector<string> progress){
 	return "Secret Route End";
 
 }
-/*
-bool GoblinBattle(Character* player) {
+
+void GoblinBattle(Character* player) {
 	Goblin* goblinObj = new Goblin();
 	double bias = player->getIQ() - goblinObj->getHealth();
 	Dice20App* GobDice = new Dice20App(11, 0);
@@ -616,7 +619,7 @@ bool GoblinBattle(Character* player) {
 				RunDice->roll();
 				if (RunDice->succeed()) {
 					cout << "You've successfully run away from battle" << endl;
-					return true;
+					return;
 				}
 				else {
 					cout << "You failed to run away" << endl;
@@ -649,20 +652,26 @@ bool GoblinBattle(Character* player) {
 		}
 	} 
 	if (player->getHealth() <= 0) {
-		return false;
+		cout << "You Have Died"<<endl;
+		cout << "GAME OVER" <<endl;
+		exit(0);
 	}
 	else {
-		return true;
+		return;
 	}
 }
 
-bool ExiledMemberBattle(Character* player) {
+void ExiledMemberBattle(Character* player) {
     ExiledMember* exiledObj = new ExiledMember();
     double bias = player->getIQ() - exiledObj->getHealth();
     Dice20App* exiledDice = new Dice20App(11, 0);
-    Dice20App* SpecialDice = new Dice20App(0, 0);
+	exiledDice->SetRollFunction();
+    Dice20App* SpecialDice = new Dice20App(0, 1);
+	SpecialDice->SetRollFunction();
+	SpecialDice->roll();
     Dice20App* RunDice = new Dice20App(10, bias);
-    while((player->getHealth() > 0) || exiledObj->getHealth() > 0) {
+	RunDice->SetRollFunction();
+    while((player->getHealth() > 0) && exiledObj->getHealth() > 0) {
         cout << "Battle Scene: " << player->getName() << " vs Exiled Member" << endl;
         cout << "Player health: " << player->getHealth() << endl;
         cout << "Exiled Member: " << exiledObj->getHealth() << endl;
@@ -672,19 +681,29 @@ bool ExiledMemberBattle(Character* player) {
         cout << "Enter 3 to use a health item" << endl;
         cout << "Enter 4 to run away" << endl;
         int userInput = -1;
-        cin >> userInput;
+        
+	
         while ((userInput != 1) && (userInput != 2) && (userInput != 3) && (userInput != 4)) {
-            if (userInput == 1) {
-                double getDamage = player->attack();
-                exiledObj->loseHealth(getDamage);
+            cin >> userInput;
+		
+	    if (userInput == 1) {
+                
+		double getDamage = player->attack();
+		exiledObj->loseHealth(getDamage);
+		
             }
             else if (userInput == 2) {
-                 double getDamage = player->specialAttack();
-                 SpecialDice->roll();
+                 
+		 SpecialDice->roll();
+		
                  if (SpecialDice->succeed()) {
-                     SpecialDice->setNumberToBeat(SpecialDice->getNumberToBeat()+3);
+                     double getDamage = player->specialAttack();
+			SpecialDice->setNumberToBeat(SpecialDice->getNumberToBeat()+3);
                      exiledObj->loseHealth(getDamage);
                  }
+		else{
+			cout << "You missed your attack"<<endl;
+		}
              }
             else if (userInput == 3) {
                 bool checker = player->getHealthItem();
@@ -708,10 +727,11 @@ bool ExiledMemberBattle(Character* player) {
             else if (userInput == 4) {
                 bias = player->getIQ() - exiledObj->getHealth();
                 RunDice->setBias(bias);
-                RunDice->roll();
+                RunDice->SetRollFunction();
+		RunDice->roll();
 		if (RunDice->succeed()) {
 			cout << "You've successfully run away from battle" << endl;
-			return true;
+			return;
 		}
 		else {
 			cout << "You failed to run away" << endl;
@@ -727,9 +747,9 @@ bool ExiledMemberBattle(Character* player) {
                 cout << "Enter 2 to use a special attack" << endl;
                 cout << "Enter 3 to use a health item" << endl;
                 cout << "Enter 4 to run away" << endl;
-                cin >> userInput;
             }
         }
+	
 	if (exiledObj->getHealth() <= 12) {
 		exiledDice->roll();
 		if(exiledDice->succeed()) {
@@ -737,6 +757,7 @@ bool ExiledMemberBattle(Character* player) {
 		}
 		else {
 			exiledDice->setBias(2);
+			exiledDice->SetRollFunction();
 			exiledDice->roll();
 			if (exiledDice->succeed()) {
                 exiledObj->special_attack(player);
@@ -745,11 +766,14 @@ bool ExiledMemberBattle(Character* player) {
                 cout << "The Exiled Member missed his attack" << endl;
 			} 
                 exiledDice->setBias(0);
+		exiledDice->SetRollFunction();
         }
 	}
 	else {
+		
             exiledDice->setBias(2);
-            exiledDice->roll();
+            exiledDice->SetRollFunction();
+	    exiledDice->roll();
             if (exiledDice->succeed()) {
                 exiledObj->special_attack(player);
             }
@@ -757,17 +781,20 @@ bool ExiledMemberBattle(Character* player) {
                 cout << "The Exiled Member missed his attack" << endl;
             }
             exiledDice->setBias(0);
+	    exiledDice->SetRollFunction();
         }
     }
 	if (player->getHealth() <= 0) {
-		return false;
+		cout << "You Have Died"<<endl;
+                cout << "GAME OVER" <<endl;
+		exit(0);
 	}
 	else {
-		return true;
+		return;
 	}
 }
 
-bool BossBattle(Character* player) {
+void BossBattle(Character* player) {
     Boss* bossObj = new Boss();
     double bias = player->getIQ() - bossObj->getHealth();
     Dice20App* bossDice = new Dice20App(11, 0);
@@ -843,7 +870,7 @@ bool BossBattle(Character* player) {
                 RunDice->roll();
                 if (RunDice->succeed()) {
                     cout << "You've successfully run away from battle" << endl;
-                    return true;
+                    return;
                 }
                 else {
                     cout << "You failed to run away" << endl;
@@ -875,11 +902,13 @@ bool BossBattle(Character* player) {
         }
     }
     if (player->getHealth() <= 0) {
-        return false;
+        cout << "You Have Died"<<endl;
+        cout << "GAME OVER" <<endl;
+	exit(0);
     }
     else {
-        return true;
+        return;
     }
 }
-*/
+
 
