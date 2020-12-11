@@ -27,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A006E9D2582EEB3003B2740 /* animalMageTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalMageTest.hpp; sourceTree = "<group>"; };
 		1A2C9DDB256DFC4700396226 /* animalRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalRace.hpp; sourceTree = "<group>"; };
 		1A2C9DDD256DFC9700396226 /* humanRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanRace.hpp; sourceTree = "<group>"; };
 		1A2C9DDE256DFD9E00396226 /* characterRace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = characterRace.hpp; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		1A2C9DE9256E074100396226 /* animalWarrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalWarrior.hpp; sourceTree = "<group>"; };
 		1A2C9DEB256E075E00396226 /* mage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mage.hpp; sourceTree = "<group>"; };
 		1A2C9DEC256E078100396226 /* warrior.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = warrior.hpp; sourceTree = "<group>"; };
+		1A3B5F6A258303C5000FFF18 /* animalWarriorTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = animalWarriorTest.hpp; sourceTree = "<group>"; };
+		1A3B5F6B25830663000FFF18 /* humanMageTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanMageTest.hpp; sourceTree = "<group>"; };
+		1A3B5F6C2583081E000FFF18 /* humanWarriorTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = humanWarriorTest.hpp; sourceTree = "<group>"; };
 		1AD9904E257C3E9E007564F7 /* character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = character.hpp; sourceTree = "<group>"; };
 		1AF1E4F9256AF1A00014F1E2 /* CrashedAndDeserted */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrashedAndDeserted; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF1E4FC256AF1A00014F1E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -78,6 +82,10 @@
 				1AF1E4FC256AF1A00014F1E2 /* main.cpp */,
 				1A2C9DDE256DFD9E00396226 /* characterRace.hpp */,
 				1A2C9DDB256DFC4700396226 /* animalRace.hpp */,
+				1A006E9D2582EEB3003B2740 /* animalMageTest.hpp */,
+				1A3B5F6B25830663000FFF18 /* humanMageTest.hpp */,
+				1A3B5F6C2583081E000FFF18 /* humanWarriorTest.hpp */,
+				1A3B5F6A258303C5000FFF18 /* animalWarriorTest.hpp */,
 				1A2C9DDD256DFC9700396226 /* humanRace.hpp */,
 				1A2C9DDF256E063900396226 /* animalMage.cpp */,
 				1A2C9DE0256E063900396226 /* animalMage.hpp */,

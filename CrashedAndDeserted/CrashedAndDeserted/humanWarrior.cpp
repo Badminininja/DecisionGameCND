@@ -29,17 +29,6 @@ void HumanWarrior::damaged(double damage) {
     this->health -= damage;
 }
 
-bool HumanWarrior::runAway(double chance, double opHealth) {
-    double run = chance * IQ;
-    if (run > opHealth) {
-        std::cout << this->name << " has successfully escaped the battle." << std::endl;
-        return true;
-    } else {
-        std::cout << this->name << " could not escape the battle." << std::endl;
-        return false;
-    }
-}
-
 void HumanWarrior::stats() {
     std::cout << "STATS:" << std::endl;
     std::cout << "Name: " << this->name << std::endl;

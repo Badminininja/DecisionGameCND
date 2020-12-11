@@ -24,7 +24,7 @@ class Character {
         virtual double specialAttack() = 0;
         virtual void healthIncrease() = 0;
         virtual void damaged(double damage) = 0;
-        virtual bool runAway(double chance, double opHealth) = 0;
+        virtual double getIQ() {return this->IQ;}
         virtual std::string getName() {return this->name;}
         virtual double getHealth() {return this->health;}
         virtual void setHealthItem(bool val) {this->healthItem = val;}
@@ -33,6 +33,8 @@ class Character {
         virtual void increaseBasicAttack(double basicAttack) {this->basicAttack += basicAttack;}
         virtual void increaseHealth(double health) {this->health += health;}
         virtual void stats() = 0;
+        virtual void increaseSpells(double special) {}
+        virtual void increaseSmite(double special) {}
 };
 
 #endif /* character_h */
