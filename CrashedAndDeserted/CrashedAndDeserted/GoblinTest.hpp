@@ -2,16 +2,15 @@
 
 TEST(GoblinTest, loseHealthTest) {
 	Goblin* g = new Goblin;
-	this->health = 20;
-	EXPECT_EQ(g->loseHealth(5.0), 20);
+	g->loseHealth(5.0);
+	EXPECT_DOUBLE_EQ(g->getHealth(), 15.0);
 }
 TEST(GoblinTest, getHealthTest) {
 	Goblin* g = new Goblin;
-	this->health = 20;
-	EXPECT_EQ(g->getHealth(), 20);
+	EXPECT_DOUBLE_EQ(g->getHealth(), 20.0);
 }
 TEST(GoblinTest, getAttackTest) {
 	Goblin* g = new Goblin;
-	this->attack_power = 20;
+	EXPECT_DOUBLE_EQ(g->getSpecialAttack(), 4.0);
 }
 

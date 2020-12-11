@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
 
-//#include "Goblin.hpp"
-//#include "Boss.hpp"
-//#include "ExiledMember.hpp"
-//#include "Dice6AppTest.hpp"
+#include "GoblinTest.hpp"
+#include "BossTest.hpp"
+#include "ExiledMemberTest.hpp"
+#include "Dice20AppTest.hpp"
 #include "animalMageTest.hpp"
 #include "animalWarriorTest.hpp"
 #include "humanMageTest.hpp"

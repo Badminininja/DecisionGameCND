@@ -9,9 +9,9 @@
 #include "characterRace.hpp"
 #include "animalRace.hpp"
 #include "humanRace.hpp"
-//#include "ExiledMember.hpp"
-//#include "Boss.hpp"
-//#include "Goblin.hpp"
+#include "ExiledMember.hpp"
+#include "Boss.hpp"
+#include "Goblin.hpp"
 #include "Dice20App.hpp"
 
 using namespace std;
@@ -28,10 +28,9 @@ string bossSceneFront(Character* userCharacter, vector<string> progress);
 string bossSceneBack(Character* userCharacter, vector<string> progress);
 string deathRoute(Character* userCharacter, vector<string> progress);
 string secretEnding(Character* userCharacter, vector<string> progress);
-
-//bool GoblinBattle(Character* player);
-//bool ExiledMemberBattle(Character* player);
-//bool BossBattle(Character* player);
+bool GoblinBattle(Character* player);
+bool ExiledMemberBattle(Character* player);
+bool BossBattle(Character* player);
 
 int main() {
     CharacterRace* typeCharacter;
@@ -598,7 +597,7 @@ bool GoblinBattle(Character* player) {
 					}
 					else {
 						cout << "You don't have a health item." << endl;
-                        cout << "Enter another option: " << endl;
+            cout << "Enter another option: " << endl;
 						cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
 						cout << "Player health: " << player->getHealth() << endl;
 						cout << "Goblin health: " << goblinObj->getHealth() << endl;
@@ -630,7 +629,7 @@ bool GoblinBattle(Character* player) {
 				cout << "Enter one of the numbers displayed below as one of your options: " << endl;
 				cout << "Enter 1 to use regualar attack" << endl;
 				cout << "Enter 2 to use a special attack" << endl;
-				cout << "Enter 3 to use a health item" << endl;
+				cout << "Enter 3 to use a health item"<< endl;
 				cout << "Enter 4 to run away" << endl;
 				int userInput = -1;
 				cin >> userInput;

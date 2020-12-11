@@ -1,5 +1,5 @@
-#ifndef CLASS_EXILED_MEMBER
-#define CLASS_EXILED_MEMBER
+#ifndef __CLASS_EXILED_MEMBER
+#define __CLASS_EXILED_MEMBER
 #include <iostream>
 #include "character.hpp"
 using namespace std;
@@ -10,14 +10,20 @@ class ExiledMember {
 		double specialAttack;
 		int health = 20;
 		int damage = 4;
-	protected:
-		ExiledMember();
+	//protected:
+	//	ExiledMember();
 	public:
-		static ExiledMember* get_exiled_instance();
+//		ExiledMember();
+		static ExiledMember* get_exiled_instance() {
+			if (exiled_instance == nullptr) {
+				exiled_instance = new ExiledMember();
+			}
+			return exiled_instance;
+		}
 		void boost_health();
 		void loseHealth(double);
-		void special_attack(Character*);	
-		int getDamage();
-		int getHealth();
+		double special_attack(Character*);	
+		double getDamage();
+		double getHealth();
 };
 #endif
