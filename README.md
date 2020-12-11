@@ -31,8 +31,8 @@
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  * First, clone the repository
- * Go to: cd ./CrashedAndDesertred/CrashedAndDeserted
- * Run the following commands in the terminal: 
+ * Open the terminal and run cd ./CrashedAndDesertred/CrashedAndDeserted 
+ * Then, run the following commands in the terminal: 
  * cmake3 .
  * make
  * ./game
