@@ -164,9 +164,9 @@ string beachScene(Character* userCharacter, vector<string> progress){
 	int response = 0;
 	cout<< "As you go down the beach, you notice how clear it is. Just sand and rocks. You don’t spot any pollution around or littered on the beach; until you come across what seems to be some near a rock cluster. You move to the side to get a better view of what might be behind the rock and you see someone who is sleeping there, understandably so as the sun has just risen."<<endl;
 	cout << "What do you do?"<<endl;
-	cout << "Call out to him from afar to wake him up and talk to him? (Enter 1)"<<endl;
-	cout << "Go up to him and shake him to make sure he wakes up? You gotta be sure he wakes up else you will continue to be clueless of this situation. (Enter 2)"<<endl;
-	cout << "Ignore him and keep walking along the beach? Who knows who or what he is, it's best to just leave him be. Plus, he is sleeping so might as well let him sleep. (Enter 3)" <<endl;
+	cout << "(Enter 1) Call out to him from afar to wake him up and talk to him?"<<endl;
+	cout << "(Enter 2) Go up to him and shake him to make sure he wakes up? You gotta be sure he wakes up else you will continue to be clueless of this situation."<<endl;
+	cout << "(Enter 3) Ignore him and keep walking along the beach? Who knows who or what he is, it's best to just leave him be. Plus, he is sleeping so might as well let him sleep." <<endl;
 	cout << "(Enter 4 for stats)"<<endl;
 	while((response !=1) && (response !=2) && (response !=3)){
 		cin >> response;
@@ -184,12 +184,17 @@ string beachScene(Character* userCharacter, vector<string> progress){
 			//call Battle Function
 		}
 		else if (response == 4) {
-			cout << "STATS PLACEHOLDER"<<endl;
+			userCharacter->stats();
+			cout << "(Enter 1) Call out to him from afar to wake him up and talk to him?"<<endl;
+			cout << "(Enter 2) Go up to him and shake him to make sure he wakes up? You gotta be sure he wakes up else you will continue to be clueless of this situation."<<endl;
+			cout << "(Enter 3) Ignore him and keep walking along the beach? Who knows who or what he is, it's best to just leave him be. Plus, he is sleeping so might as well let him sleep." <<endl;
+			cout << "(Enter 4 for stats)"<<endl;
 		}
 		else{
-			cout << "Call out to him from afar to wake him up and talk to him? (Enter 1)"<<endl;
-        		cout << "Go up to him and shake him to make sure he wakes up? You gotta be sure he wakes up else you will continue to be clueless of this situation. (Enter 2)"<<endl;
-        		cout << "Ignore him and keep walking along the beach? Who knows who or what he is, it's best to just leave him be. Plus, he is sleeping so might as well let him sleep. (Enter 3)" <<endl;
+			cout << "(Enter 1) Call out to him from afar to wake him up and talk to him?"<<endl;
+			cout << "(Enter 2) Go up to him and shake him to make sure he wakes up? You gotta be sure he wakes up else you will continue to be clueless of this situation."<<endl;
+			cout << "(Enter 3) Ignore him and keep walking along the beach? Who knows who or what he is, it's best to just leave him be. Plus, he is sleeping so might as well let him sleep." <<endl;
+			cout << "(Enter 4 for stats)"<<endl;
 		}
 	}
 
@@ -199,24 +204,25 @@ string BeachDialogue(){
 	int response = 0;
 	cout << "Hey, my name is Octavius, Tane Octavius, I’ve been here for a short while now, is there anything you wanted to know? I don’t have much better things to do right now and I don’t mind the company." <<endl;
 	cout << "What do you want to know?" <<endl;
-	cout << "Ask about the area (Enter 1)" <<endl;
-	cout << "Ask how he got here (Enter 2)" <<endl;
-	cout << "Ask if he knows if there is anyone else around (Enter 3)" <<endl;
-	cout << "Ask why is he here on this island (Enter 4)" << endl;
-	cout << "You know all that you need to know, say a farewell and continue along the beach (Enter 5)" << endl;
+	cout << "(Enter 1) Ask about the area" <<endl;
+	cout << "(Enter 2) Ask how he got here" <<endl;
+	cout << "(Enter 3) Ask if he knows if there is anyone else around" <<endl;
+        cout << "(Enter 4) Ask why is he here on this island (Enter 4)" << endl;
+        cout << "(Enter 5) You know all that you need to know, say a farewell and continue along the beach" << endl;
+	cout << "(Enter 6) view stats" <<endl;
 	while((response !=4) && (response !=5)){
 		cin >>response;
 		if (response == 1){
 			cout << "So far as I know, this place is a small island, located who knows where. The forest covers most of the area, there’s plenty of food in there so it's pretty easy to continue living here." <<endl;
-			cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave)" <<endl;
+			cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave, 6 stats)" <<endl;
 		}
 		else if (response == 2){
 			cout << "I’m not entirely sure how I got here, at one point I got knocked out and then I woke up on this Island, I don’t know how I was put here nor the people who did it. Though that was a long time ago so that matters little now." <<endl;
-                        cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave)" <<endl;
+                        cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave, 6 stats)" <<endl;
 		}	
 		else if (response == 3){
 			cout << "I haven’t actually seen anyone around but I do hear noises that I can only assume are other people. Or maybe even mystical creatures, who knows. I don’t know their business whether they are hostile or friendly so I haven’t confronted them." <<endl;
-                        cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave)" <<endl;
+                        cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave, 6 stats)" <<endl;
 
 		}
 		else if (response == 4){
@@ -228,14 +234,18 @@ string BeachDialogue(){
 		else if (response == 5){
 			cout << "All good, I’m gonna go get some fruit in the forest for something to eat, see ya around I guess" <<endl;
 			return "Beach 2 Scene";
+		}else if (response == 6){
+			userCharacter->stats();
+			cout << "Anything else you want to know? (1 area, 2 how, 3 anyone, 4 why, 5 leave, 6 stats)" <<endl;
 		}
 		else{
 			cout << "What do you want to know?" <<endl;
-		        cout << "Ask about the area (Enter 1)" <<endl;
-		        cout << "Ask how he got here (Enter 2)" <<endl;
-		        cout << "Ask if he knows if there is anyone else around (Enter 3)" <<endl;
-		        cout << "Ask why is he here on this island (Enter 4)" << endl;
-		        cout << "You know all that you need to know, say a farewell and continue along the beach (Enter 5)" << endl;
+		        cout << "(Enter 1) Ask about the area" <<endl;
+		        cout << "(Enter 2) Ask how he got here" <<endl;
+		        cout << "(Enter 3) Ask if he knows if there is anyone else around" <<endl;
+		        cout << "(Enter 4) Ask why is he here on this island (Enter 4)" << endl;
+		        cout << "(Enter 5) You know all that you need to know, say a farewell and continue along the beach" << endl;
+			cout << "(Enter 6) view stats" <<endl;
 	
 		
 		}
@@ -271,6 +281,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "You tell the Goblin you were lost and would much appreciate it if he could lead you back to civilization. He responds in a deep and dirty voice, “Well that’s fine, it's just down this trail. But you know, the only people here that can be wandering around outside needs a badge right?” You awkwardly smile and nod your head “of course, of course I knew that, I just so happened to have lost my badge.” He responds “Ah, then that’s good, because then that means you should also know that if you don’t have a badge outside then we can only assume that you are an exile to which we may kill on the spot” He sports a dark grin as he unsheathed his sword and points it at you. “Hope you’re ready to die exile, cus I’m ready for a promotion”" <<endl;
 					//BATTLE
 				}else if (response == 3){
+					userCharacter->stats();
 					cout << "This is no time to look at your stats. The Goblin throws a knife at you while you're distracted then prepares for battle" <<endl;
 					//PLAYER FREE HIT
 					//BATTLE	
@@ -292,7 +303,10 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					return "Waterfall Scene";
 				}
 				else if (response == 3) {
-					cout << "STATS PLACEHOLDER"<<endl;
+					userCharacter->stats();
+					cout << "(Enter 1) toward the trail"<<endl;
+					cout << "(Enter 2) toward the water"<<endl;
+					cout << "(Enter 3) view stats" <<endl;
 				}
 				else{
 				 	cout << "CHOICE "<<endl;
@@ -322,7 +336,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "The trail he walks on leads to a medieval structure, similar to something like a castle but not as majestic or beautiful, more run down if anything. The Goblin goes through the front door with it not seeming to be locked as they probably think no one unapproved would be here on this island. After a bit of time the Goblin leaves the structure in pursuit of something that is off road and deeper in the forest." <<endl;
 					return "Investigate Structure Scene";
 				}else if (response == 3){
-					cout << "STATS PLACEHOLDER"<<endl;
+					userCharacter->stats();
 					cout << "CHOICES: With him still unaware of your presence what do you do?" <<endl;
         		                cout << "(Enter 1) Stab him in the back and get a free hit before fighting him? "<<endl;
         		                cout << "(Enter 2) Continue to stalk him from the bushes" <<endl;
@@ -349,7 +363,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 				}else if(response ==2){
 					return "Waterfall Scene";
 				}else if(response == 3){
-					cout << "STATS PLACEHOLDER"<<endl;
+					userCharacter->stats();
 					cout << "(Enter 1) Follow the trail that the Goblin is on that leads to the medieval structure to investigate? "<<endl;
                         		cout << "(Enter 2) Go toward the waterfall to see if there is a place you can set up shop or at least to familiarize yourself with the land to give you the option to run to it and hide if need be." <<endl;
                         		cout << "(Enter 3) view stats" <<endl;	
@@ -361,7 +375,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 				}
 			}									
 		}else if(response == 4) {
-			cout << "STATS PLACEHOLDER" <<endl;
+			userCharacter->stats();
 			cout << "CHOICES What do you do?"<<endl;
 		        cout << "(Enter 1) Keep moving forward toward the trail and try to see where the sound is coming from? Maybe there’s actually other people on this island who could help you." <<endl;
 		        cout << "(Enter 2) Hide in the bushes and stalk and follow the noise. With the amount of vegetation it should be enough to conceal your presence. "<<endl;
@@ -396,7 +410,7 @@ string investigateStructureScene(Character* userCharacter, vector<string> progre
 			cout << "You circle around the castle to delight that part of the forest touches the top of the wall. This allowed you to be able to climb one of the trees and jump onto the wall and get inside from the backside. You believe it would have been too obvious if you had gone through the front door since you are technically a criminal so people might not be the friendliest toward you. You think highly of yourself for this task and enter a balcony opening inside the structure." <<endl;
 			return "Boss Scene Back";
 		}else if (response == 3){
-			cout << "STATS PLACEHOLDER"<< endl;
+			userCharacter->stats();
 			cout << "(Enter 1) front door" <<endl;
         		cout << "(Enter 2) Look around" <<endl;
         		cout << "(Enter 3) view Stats" <<endl;	
@@ -450,7 +464,7 @@ string beach2Scene(Character* userCharacter, vector<string> progress){
 			cout << "After stalking the pursuers for a bit you spot something shiny that they dropped, it seemed to be the key to the boat. While it’s understandable to want to help that other exile, they may not be framed like you were, so you take the key and run back to the boat quickly as the 2 pursuers are still busy. When you get on the boat you hear a single high pitched beep. After inserting the key you found on the floor the boat beeps again but in a deep tone and then turns on. You drive out of the island and look for where civilization is. The boat has enough rations and fuel if you even got slightly lost." <<endl;
 			return "Secret Ending";
 		}else if(response == 3){
-			cout << "STATS PLACEHOLDER"<<endl;
+			userCharacter->stats();
 			cout << "CHOICES: What do you do?" <<endl;
 		        cout << "(Enter 1) Steal the boat?" <<endl;
 		        cout << "(Enter 2) Stalk and follow the pursuers" <<endl;
@@ -482,7 +496,7 @@ string bossSceneFront(Character* userCharacter, vector<string> progress){
 		//BOSS BATTLE
 	}
 	else if(response == 3){
-		cout << "STATS PLACEHOLDER"<<endl;
+		userCharacter->stats();
 		cout << "While you were busy trying to checkout your well being, thinking back to your past actions or whatever you were trying to do, the boss got a free hit on you while you were distracted"<<endl;
 		//BOSS BATTLE
 	}
@@ -504,11 +518,11 @@ string bossSceneBack(Character* userCharacter, vector<string> progress){
 		cout << "The man enters the room and even before he lets go of the door handle you jump on him attempting to give a clean cut on his head, but he moves his hand to block the blade, taking a stab through his hand but avoiding fatality. (Boss takes a free hit) He pushes you off of him and takes out his sword." <<endl;
 		//BOSS BATTLE
 	}else if (response ==3) {
-		cout << "STATS PLACEHOLDER"<<endl;
+		userCharacter->stats();
 		cout << "you took your time look at your stats and lost the element of surprise. The boss sees you and draws his sword" <<endl;
 		//BOSS BATTLE
 	}else{
-		cout <<"you took your time doing who knows what (not setting up a surprise attackt thats for sure), and lost the element of surprise. The boss sees you and draws his sword" <<endl;
+		cout <<"you took your time doing who knows what (not setting up a surprise attack thats for sure), and lost the element of surprise. The boss sees you and draws his sword" <<endl;
  		//BOSS BATTLE
 	}
 
