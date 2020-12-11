@@ -29,8 +29,8 @@ TEST(humanMageTest, specialAttackTest) {
     CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_DOUBLE_EQ(player->specialAttack(), 6.5);
-    //player->increaseSpells(3.0);
-    //EXPECT_DOUBLE_EQ(player->specialAttack(), 8.0);
+    player->increaseSpells(3.0);
+    EXPECT_DOUBLE_EQ(player->specialAttack(), 9.5);
 }
 
 TEST(humanMageTest, IQTest) {
