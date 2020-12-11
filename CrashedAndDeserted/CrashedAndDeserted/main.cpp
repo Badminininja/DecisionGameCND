@@ -231,7 +231,7 @@ string BeachDialogue(Character* userCharacter, vector<string> progress){
 			cout << "How about before I answer that we go into the forest? It's morning and I haven’t had anything to eat and I’m sure you haven’t either. There is a lot of food in the forest as it seems there has been little human intervention." <<endl;
 			//BATTLE TRIGGER
 			cout << "You both start walking into the forest with Tane leading to a place with some good fruit. “You know I remembered the reason why I’m here, before I was knocked out and landed on this beach, I remember a court scene. Heh, yea I was exiled. But you know, that also means you’ve been exiled, and that means you’ve got blood on your hands” As we finish his sentence an arrow shoots, hidden in some bushes and pierces your shoulder, just nearly missing your head. “Tsk, You’re a criminal like me, I can’t trust you” He pulls out his sword and gets ready to fight you." <<endl;
-			
+			ExiledMemberBattle(userCharacter);
 			return "Waterfall Scene";
 		}
 		else if (response == 5){
@@ -279,19 +279,22 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "The Goblin throws a small knife hitting your leg and slowing you down enough for him to get to you" <<endl;
 					//PLAYER FREE HIT
 					//BATTLE
+					GoblinBattle(userCharacter);
 				}
 				else if (response == 2){ 
 					cout << "You tell the Goblin you were lost and would much appreciate it if he could lead you back to civilization. He responds in a deep and dirty voice, “Well that’s fine, it's just down this trail. But you know, the only people here that can be wandering around outside needs a badge right?” You awkwardly smile and nod your head “of course, of course I knew that, I just so happened to have lost my badge.” He responds “Ah, then that’s good, because then that means you should also know that if you don’t have a badge outside then we can only assume that you are an exile to which we may kill on the spot” He sports a dark grin as he unsheathed his sword and points it at you. “Hope you’re ready to die exile, cus I’m ready for a promotion”" <<endl;
 					//BATTLE
+					GoblinBattle(userCharacter);
 				}else if (response == 3){
 					userCharacter->stats();
 					cout << "This is no time to look at your stats. The Goblin throws a knife at you while you're distracted then prepares for battle" <<endl;
+					GoblinBattle(userCharacter);
 					//PLAYER FREE HIT
 					//BATTLE	
 				}
 			}
  						
-			cout << "With the Goblin dead, you could path toward where the trail continues, or you can trek into the forest where you hear crashing waters which could potentiall give you a place to rest" <<endl;
+			cout << "With the Goblin gone, you could path toward where the trail continues, or you can trek into the forest where you hear crashing waters which could potentiall give you a place to rest" <<endl;
 			cout << "CHOICE "<<endl;
 			cout << "(Enter 1) toward the trail"<<endl;
 			cout << "(Enter 2) toward the water"<<endl;
@@ -333,6 +336,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "Goblin grunts in pain “haah, an exile stabbing me in the back, how typical”" <<endl;
 					//Goblin Takes free hit
 					//GOBLINE BATTLE
+					GoblinBattle(userCharacter);
 					cout << "after a successful victory against the Goblin, you come accross the structure that the path lead to "<<endl;
 					return "Investigate Structure Scene";
 				}else if (response ==2){
@@ -496,11 +500,13 @@ string bossSceneFront(Character* userCharacter, vector<string> progress){
 	cin >> response;
 	if((response == 1)||(response == 2) ){
 		cout << "Boss: Heh, now thats more like it"<<endl;
+		BossBattle(userCharacter);
 		//BOSS BATTLE
 	}
 	else if(response == 3){
 		userCharacter->stats();
 		cout << "While you were busy trying to checkout your well being, thinking back to your past actions or whatever you were trying to do, the boss got a free hit on you while you were distracted"<<endl;
+		BossBattle(userCharacter);
 		//BOSS BATTLE
 	}
 	return "THE END";
@@ -515,18 +521,22 @@ string bossSceneBack(Character* userCharacter, vector<string> progress){
 	cin >> response;
 	if(response == 1){
 		cout << "The man enters the room, to immediately notice his prized achievement of a pendant gone. He looks shaken, but before he can’t even call out “who goes there” an arrow shoots from the side of the room and hits him around his waist (Boss takes a free hit) Afterwards you jump in to try to get another hit but he parries by unsheathing his sword." <<endl;
+		BossBattle(userCharacter);
 		//BOSS BATTLE
 
 	}else if(response ==2){
 		cout << "The man enters the room and even before he lets go of the door handle you jump on him attempting to give a clean cut on his head, but he moves his hand to block the blade, taking a stab through his hand but avoiding fatality. (Boss takes a free hit) He pushes you off of him and takes out his sword." <<endl;
+		BossBattle(userCharacter);
 		//BOSS BATTLE
 	}else if (response ==3) {
 		userCharacter->stats();
 		cout << "you took your time look at your stats and lost the element of surprise. The boss sees you and draws his sword" <<endl;
+		BossBattle(userCharacter);
 		//BOSS BATTLE
 	}else{
 		cout <<"you took your time doing who knows what (not setting up a surprise attack thats for sure), and lost the element of surprise. The boss sees you and draws his sword" <<endl;
- 		//BOSS BATTLE
+ 		BossBattle(userCharacter);
+		//BOSS BATTLE
 	}
 
 	
@@ -547,8 +557,11 @@ void GoblinBattle(Character* player) {
 	Goblin* goblinObj = new Goblin();
 	double bias = player->getIQ() - goblinObj->getHealth();
 	Dice20App* GobDice = new Dice20App(11, 0);
-	Dice20App* SpecialDice = new Dice20App(0, 0);
+		GobDice->SetRollFunction();
+	Dice20App* SpecialDice = new Dice20App(0, 1);
+		SpecialDice->SetRollFunction();
 	Dice20App* RunDice = new Dice20App(10, bias);
+		RunDice->SetRollFunction();
 	bool reaction = false;
 	while((player->getHealth() > 0) || goblinObj->getHealth() > 0) {
 		cout << "Battle Scene: " << player->getName() << " vs Goblin" << endl;
@@ -616,6 +629,7 @@ void GoblinBattle(Character* player) {
 			else if (userInput == 4) {
 				bias = player->getIQ() - goblinObj->getHealth();	
 				RunDice->setBias(bias);
+				RunDice->SetRollFunction();
 				RunDice->roll();
 				if (RunDice->succeed()) {
 					cout << "You've successfully run away from battle" << endl;
@@ -641,6 +655,7 @@ void GoblinBattle(Character* player) {
 		}
 		if (!reaction) {
 			GobDice->setBias(2);
+			GobDice->SetRollFunction();
 			GobDice->roll();
 			if (GobDice->succeed()) {
 				goblinObj->attack_power_indicator(player);
@@ -649,6 +664,7 @@ void GoblinBattle(Character* player) {
 				cout << "The Goblin missed his attack" << endl;
 			}
             GobDice->setBias(0);
+			GobDice->SetRollFunction();
 		}
 	} 
 	if (player->getHealth() <= 0) {
@@ -798,8 +814,11 @@ void BossBattle(Character* player) {
     Boss* bossObj = new Boss();
     double bias = player->getIQ() - bossObj->getHealth();
     Dice20App* bossDice = new Dice20App(11, 0);
-    Dice20App* SpecialDice = new Dice20App(0, 0);
+	bossDice->SetRollFunction();
+    Dice20App* SpecialDice = new Dice20App(0, 1);
+	SpecialDice->SetRollFunction();
     Dice20App* RunDice = new Dice20App(10, bias);
+	RunDice->SetRollFunction();
     bool reaction = false;
     while((player->getHealth() > 0) || bossObj->getHealth() > 0) {
         cout << "Battle Scene: " << player->getName() << " vs Boss" << endl;
@@ -867,6 +886,7 @@ void BossBattle(Character* player) {
             else if (userInput == 4) {
                 bias = player->getIQ() - bossObj->getHealth();
                 RunDice->setBias(bias);
+		    RunDice->SetRollFunction();
                 RunDice->roll();
                 if (RunDice->succeed()) {
                     cout << "You've successfully run away from battle" << endl;
@@ -891,6 +911,7 @@ void BossBattle(Character* player) {
         }
         if (!reaction) {
             bossDice->setBias(2);
+		bossDice->SetRollFunction();
             bossDice->roll();
             if (bossDice->succeed()) {
                 bossObj->attackDamage(player);
@@ -899,6 +920,7 @@ void BossBattle(Character* player) {
                 cout << "The Boss missed his attack" << endl;
             }
             bossDice->setBias(0);
+		bossDice->SetRollFunction();
         }
     }
     if (player->getHealth() <= 0) {
