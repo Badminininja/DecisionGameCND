@@ -5,11 +5,9 @@
 //#include "ExiledMember.hpp"
 //#include "Dice6AppTest.hpp"
 #include "animalMageTest.hpp"
-#include "characterRace.hpp"
-#include "character.hpp"
-#include "mage.hpp"
-#include "warrior.hpp"
-#include "animalWarrior.hpp"
+#include "animalWarriorTest.hpp"
+#include "humanMageTest.hpp"
+#include "humanWarriorTest.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

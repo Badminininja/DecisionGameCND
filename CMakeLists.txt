@@ -10,6 +10,8 @@ ADD_EXECUTABLE(test
 	CrashedAndDeserted/CrashedAndDeserted/unit_test.cpp
 	CrashedAndDeserted/CrashedAndDeserted/animalMage.cpp
 	CrashedAndDeserted/CrashedAndDeserted/animalWarrior.cpp
+	CrashedAndDeserted/CrashedAndDeserted/humanMage.cpp
+        CrashedAndDeserted/CrashedAndDeserted/humanWarrior.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest) 

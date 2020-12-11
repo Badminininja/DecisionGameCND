@@ -18,7 +18,7 @@
 using namespace std;
 
 TEST(humanWarriorTest, attackTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_DOUBLE_EQ(player->attack(), 4.5);
     player->increaseBasicAttack(3.0);
@@ -26,7 +26,7 @@ TEST(humanWarriorTest, attackTest) {
 }
 
 TEST(humanWarriorTest, specialAttackTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_DOUBLE_EQ(player->specialAttack(), 8.0);
     //player->increaseSpells(3.0);
@@ -34,7 +34,7 @@ TEST(humanWarriorTest, specialAttackTest) {
 }
 
 TEST(humanWarriorTest, IQTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_DOUBLE_EQ(player->getIQ(), 3.5);
     player->increaseIQ(3.0);
@@ -42,7 +42,7 @@ TEST(humanWarriorTest, IQTest) {
 }
 
 TEST(humanWarriorTest, healthTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_DOUBLE_EQ(player->getHealth(), 16.5);
     player->increaseHealth(3.0);
@@ -52,13 +52,13 @@ TEST(humanWarriorTest, healthTest) {
 }
 
 TEST(humanWarriorTest, nameTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_EQ(player->getName(), "aro");
 }
 
 TEST(humanWarriorTest, itemHealthTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_EQ(player->getHealthItem(), false);
     player->setHealthItem(true);
@@ -66,7 +66,7 @@ TEST(humanWarriorTest, itemHealthTest) {
 }
 
 TEST(humanWarriorTest, damageTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     double damage = 5.0;
     player->damaged(damage);

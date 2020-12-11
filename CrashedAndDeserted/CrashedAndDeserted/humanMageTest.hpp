@@ -18,7 +18,7 @@
 using namespace std;
 
 TEST(humanMageTest, attackTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_DOUBLE_EQ(player->attack(), 4.0);
     player->increaseBasicAttack(3.0);
@@ -26,7 +26,7 @@ TEST(humanMageTest, attackTest) {
 }
 
 TEST(humanMageTest, specialAttackTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_DOUBLE_EQ(player->specialAttack(), 6.5);
     //player->increaseSpells(3.0);
@@ -34,7 +34,7 @@ TEST(humanMageTest, specialAttackTest) {
 }
 
 TEST(humanMageTest, IQTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_DOUBLE_EQ(player->getIQ(), 6.0);
     player->increaseIQ(3.0);
@@ -42,7 +42,7 @@ TEST(humanMageTest, IQTest) {
 }
 
 TEST(humanMageTest, healthTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_DOUBLE_EQ(player->getHealth(), 20.0);
     player->increaseHealth(3.0);
@@ -52,13 +52,13 @@ TEST(humanMageTest, healthTest) {
 }
 
 TEST(humanMageTest, nameTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_EQ(player->getName(), "aro");
 }
 
 TEST(humanMageTest, itemHealthTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     EXPECT_EQ(player->getHealthItem(), false);
     player->setHealthItem(true);
@@ -66,7 +66,7 @@ TEST(humanMageTest, itemHealthTest) {
 }
 
 TEST(humanMageTest, damageTest) {
-    CharacterRace* playerType = new humanRace();
+    CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createMage("aro");
     double damage = 5.0;
     player->damaged(damage);
