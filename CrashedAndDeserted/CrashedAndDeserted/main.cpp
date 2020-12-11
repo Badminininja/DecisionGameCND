@@ -31,6 +31,7 @@ string secretEnding(Character* userCharacter, vector<string> progress);
 void GoblinBattle(Character* player);
 void ExiledMemberBattle(Character* player);
 void BossBattle(Character* player);
+void printProgress(vector<string> progress);
 
 
 int main() {
@@ -82,10 +83,18 @@ int main() {
 	}else if(endingScene == "Secret Route End"){
 		cout << "Congratz, you found the secret route"<<endl;
 	}
-	
+	printProgress(progress);
 	return 0;
 }
+void printProgress(vector<string> progress){
+	
+	cout << endl << "Your decisions" <<endl;
+	for(int i = 0, i<progress.size();i++){
+		cout << "Choice #" << i + 1 << ": ";
+		cout << progress.at(i)<<endl;
+	}
 
+}
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) {
     string name;
     Character* character;
