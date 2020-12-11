@@ -20,5 +20,20 @@ ADD_EXECUTABLE(test
 	DisAdvRoll.cpp
 	NormalRoll.cpp
 )
+ADD_EXECUTABLE(game
+	main.cpp
+	Boss.cpp
+        Goblin.cpp
+        ExiledMember.cpp
+        animalMage.cpp
+        animalWarrior.cpp
+        humanMage.cpp
+        humanWarrior.cpp
+        AdvRoll.cpp
+        Dice20App.cpp
+        DisAdvRoll.cpp
+        NormalRoll.cpp
+
+)
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
