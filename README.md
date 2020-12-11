@@ -19,7 +19,7 @@
 ## Class Diagrams
  
  ![ABSDesignPattern](https://user-images.githubusercontent.com/5094397/101873790-74e25a80-3b3c-11eb-9e8d-b673be0be67a.PNG)
- ![StrategyPattern](https://user-images.githubusercontent.com/5094397/99346702-1df1aa00-284a-11eb-9a93-7786b39f9302.PNG)
+ ![stratPattern](https://user-images.githubusercontent.com/5094397/101940998-3a100f00-3b9c-11eb-8dc1-dd0ec5b9bc28.PNG)
  ![SingletonPat](https://user-images.githubusercontent.com/5094397/101873803-79a70e80-3b3c-11eb-89a9-886a5635f624.PNG)
 
  ## Screenshots
@@ -32,14 +32,16 @@
  ![screen7](https://user-images.githubusercontent.com/5094397/101889386-30fb4f80-3b54-11eb-9e9a-74c826850fb1.png)
  ## Installation/Usage
  * First, clone the repository
- * Open the terminal and run cd ./CrashedAndDesertred/CrashedAndDeserted 
- * Then, run the following commands in the terminal: 
+ * Open the terminal and cd into final-projct-amasa004-dsenc002-jmang018 
+ * Then, run cd ./CrashedAndDesertred/CrashedAndDeserted 
+ * Run the following commands in the terminal: 
+ * git submodule update --init
  * cmake3 .
  * make
  * ./game
  ## Testing
  * To ensure that the large number of classes we implemented is error free, we used googletest. With the help of the googeltest, we created unit tests and tested every single function in our classes and verified that they passed their tests through running the test executable.
- ![Code](https://user-images.githubusercontent.com/57073212/101874740-4ebdba00-3b3e-11eb-8491-c73167592c33.PNG)
+ ![unittests](https://user-images.githubusercontent.com/5094397/101940987-367c8800-3b9c-11eb-96da-a9fb61f6b56f.png)
  * Main Function Tests
    * Selecting Human Mage
      ![HumanMage](https://user-images.githubusercontent.com/5094397/101886244-11fabe80-3b50-11eb-953d-7d29b90c0715.png)
