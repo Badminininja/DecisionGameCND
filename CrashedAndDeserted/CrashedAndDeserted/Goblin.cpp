@@ -5,7 +5,7 @@ Goblin* Goblin::goblin_instance = nullptr;
 
 
 void Goblin::attack_power_indicator(Character* player) {
-	cout << "The Goblin did " << this->attack_power << "amount of damage" << endl;
+	cout << "The Goblin did " << this->attack_power << " amount of damage" << endl;
 	player->damaged(this->attack_power);
 }
 

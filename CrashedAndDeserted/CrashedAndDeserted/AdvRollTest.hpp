@@ -35,7 +35,7 @@ TEST(AdvRoll, AboveBoundsChecking){
 	EXPECT_GT((dice->getNumOfSides()+1),dice->getCurrentNumber());
 
 }
-TEST(NormalRoll, BelowBoundsChecking){
+TEST(AdvRoll, BelowBoundsChecking){
         Dice20App* dice = new Dice20App(10, 1);
         dice->SetRollFunction();
         dice->roll();
