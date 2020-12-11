@@ -18,9 +18,9 @@
 
 ## Class Diagrams
  
- ![AbstractFactory](https://user-images.githubusercontent.com/5094397/99346691-13cfab80-284a-11eb-83aa-9121e62fd59b.PNG)
+ ![ABSDesignPattern](https://user-images.githubusercontent.com/5094397/101873790-74e25a80-3b3c-11eb-9e8d-b673be0be67a.PNG)
  ![StrategyPattern](https://user-images.githubusercontent.com/5094397/99346702-1df1aa00-284a-11eb-9a93-7786b39f9302.PNG)
- ![SingletonPattern](https://user-images.githubusercontent.com/5094397/100199531-2a14e180-2eb2-11eb-94c3-3fc0b05ee51a.PNG)
+ ![SingletonPat](https://user-images.githubusercontent.com/5094397/101873803-79a70e80-3b3c-11eb-89a9-886a5635f624.PNG)
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
