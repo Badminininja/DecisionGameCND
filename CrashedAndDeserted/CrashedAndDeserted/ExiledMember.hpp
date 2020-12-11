@@ -13,8 +13,13 @@ class ExiledMember {
 	//protected:
 	//	ExiledMember();
 	public:
-		ExiledMember();
-		static ExiledMember* get_exiled_instance();
+//		ExiledMember();
+		static ExiledMember* get_exiled_instance() {
+			if (exiled_instance == nullptr) {
+				exiled_instance = new ExiledMember();
+			}
+			return exiled_instance;
+		}
 		void boost_health();
 		void loseHealth(double);
 		double special_attack(Character*);	

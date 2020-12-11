@@ -1,14 +1,8 @@
 #include "Goblin.hpp"
 
 
-Goblin* Goblin::goblin_instance = 0;
+Goblin* Goblin::goblin_instance = nullptr;
 
-Goblin* Goblin::get_goblin_instance() {
-	if (goblin_instance == 0) {
-		goblin_instance = new Goblin;
-	}
-	return goblin_instance;
-}
 
 void Goblin::attack_power_indicator(Character* player) {
 	cout << "The Goblin did " << this->attack_power << "amount of damage" << endl;

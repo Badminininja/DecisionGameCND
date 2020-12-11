@@ -2,14 +2,8 @@
 
 using namespace std;
 
-ExiledMember* ExiledMember :: exiled_instance = 0;
+ExiledMember* ExiledMember :: exiled_instance = nullptr;
 
-ExiledMember* ExiledMember :: get_exiled_instance() {
-	if (exiled_instance == 0) {
-		exiled_instance = new ExiledMember;
-	}
-	return exiled_instance;
-}
 void ExiledMember :: loseHealth(double playerAttack) {
 	cout << "The Exiled Member has lost " << playerAttack << " health" << endl;
 	cout << "The Exiled Member has " << this->health - playerAttack << " health" << endl;
