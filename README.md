@@ -45,13 +45,14 @@
    * Selecting Animal Mage
      ![AnimalMage](https://user-images.githubusercontent.com/5094397/101887694-10ca9100-3b52-11eb-88ea-7f9abb01607d.png)
    * Selecting Animal Warrior
-    ![AnimalWarrior](https://user-images.githubusercontent.com/5094397/101886249-13c48200-3b50-11eb-9620-72bed06132b6.png)
+    ![AnimalWarrior](https://user-images.githubusercontent.com/5094397/101888011-7c146300-3b52-11eb-9750-bff1cf259a9e.png)
    * Selecting Human Warrior
-     ![HumanWarrior](https://user-images.githubusercontent.com/5094397/101886252-14f5af00-3b50-11eb-89b5-6077fc44d796.png)
+     ![HumanWarrior](https://user-images.githubusercontent.com/5094397/101888016-7cacf980-3b52-11eb-87f5-a7d4f7c65dfd.png)
    * Battle Scene EX1
-     ![BattleEx1](https://user-images.githubusercontent.com/5094397/101887139-4de25380-3b51-11eb-825c-43abdad90444.png)
+     ![Battle1](https://user-images.githubusercontent.com/5094397/101888022-7e76bd00-3b52-11eb-8452-a84a3e33e143.png)
    * Battle Scene EX2
-     ![BattleEx2](https://user-images.githubusercontent.com/5094397/101887146-4fac1700-3b51-11eb-8294-f5b5f27f9609.png)
+     ![Battle2](https://user-images.githubusercontent.com/5094397/101888028-7f0f5380-3b52-11eb-9a9d-338e289572f9.png)
+
 
 
  
