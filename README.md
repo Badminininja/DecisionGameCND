@@ -31,6 +31,12 @@
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  > Instructions on installing and running your application
+ * First, clone the repository
+ * Go to: cd ./CrashedAndDesertred/CrashedAndDeserted
+ * Perform the following actions in order: 
+ * cmake3 .
+ * make
+ * ./<executable file>
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
