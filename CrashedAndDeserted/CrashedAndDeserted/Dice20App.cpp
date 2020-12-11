@@ -17,15 +17,15 @@ void Dice20App :: print(){
 void Dice20App :: SetRollFunction(){
 	
 	RollStrategy* function;
-	
-	if(bias == 0){
-		function = new NormalRoll();
-	}
+
 	if(bias < 0){
 		function = new DisAdvRoll();
 	}
-	else{
+	else if(bias > 0){
 		function = new AdvRoll();
+	}
+	else{
+		function = new NormalRoll();
 	}
 	
 	RollFunction = function;

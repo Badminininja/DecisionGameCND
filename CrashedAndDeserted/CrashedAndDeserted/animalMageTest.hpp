@@ -44,11 +44,11 @@ TEST(animalMageTest, IQTest) {
 TEST(animalMageTest, healthTest) {
     CharacterRace* playerType = new AnimalRace();
     Character* player = playerType->createMage("aro");
-    EXPECT_DOUBLE_EQ(player->getHealth(), 22.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 37.0);
     player->increaseHealth(3.0);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 25.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 40.0);
     player->healthIncrease();
-    EXPECT_DOUBLE_EQ(player->getHealth(), 28.5);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 43.5);
 }
 
 TEST(animalMageTest, nameTest) {
@@ -70,7 +70,7 @@ TEST(animalMageTest, damageTest) {
     Character* player = playerType->createMage("aro");
     double damage = 5.0;
     player->damaged(damage);
-    EXPECT_DOUBLE_EQ(player->getHealth(), 17.0);
+    EXPECT_DOUBLE_EQ(player->getHealth(), 32.0);
 }
 
 #endif /* animalMageTest_h */

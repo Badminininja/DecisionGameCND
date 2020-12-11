@@ -10,6 +10,7 @@ using namespace std;
 
 
 TEST(DisAdvRoll, SimpleRolling){
+	srand(time(NULL));
 	Dice20App* dice = new Dice20App(10,(-10));
 	dice->print();
 	dice->SetRollFunction();
@@ -19,7 +20,8 @@ TEST(DisAdvRoll, SimpleRolling){
 }
 
 TEST(DisAdvRoll, SimpleRolling2){
-        Dice20App* dice = new Dice20App(10,(-3));
+        srand(time(NULL));
+	Dice20App* dice = new Dice20App(10,(-3));
         dice->print();
         dice->SetRollFunction();
         dice->roll();
@@ -27,7 +29,8 @@ TEST(DisAdvRoll, SimpleRolling2){
         EXPECT_NE(dice->getCurrentNumber(), (-1));
 }
 TEST(DisAdvRoll, BelowBoundsChecking){
-        Dice20App* dice = new Dice20App(10,(-100));
+        srand(time(NULL));
+	Dice20App* dice = new Dice20App(10,(-100));
 	dice->SetRollFunction();
 	dice->roll();
 	cout << "lowest: " << dice->getCurrentNumber()<<endl;
@@ -35,7 +38,7 @@ TEST(DisAdvRoll, BelowBoundsChecking){
 
 }
 TEST(DisAdvRoll, AboveBoundsChecking){
-
+	srand(time(NULL));
 	Dice20App* dice = new Dice20App(10, (-1));
         dice->SetRollFunction();
         dice->roll();
