@@ -17,7 +17,7 @@
 using namespace std;
 
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
-int firstScene(Character* userCharacter, vector<string> progress);
+int firstScene(Character* userCharacter, vector<string>& progress);
 string beachScene(Character* userCharacter, vector<string> progress);
 string BeachDialogue(Character* userCharacter, vector<string> progress);
 string forestScene(Character* userCharacter, vector<string> progress);
@@ -28,9 +28,9 @@ string bossSceneFront(Character* userCharacter, vector<string> progress);
 string bossSceneBack(Character* userCharacter, vector<string> progress);
 string deathRoute(Character* userCharacter, vector<string> progress);
 string secretEnding(Character* userCharacter, vector<string> progress);
-void GoblinBattle(Character* player);
-void ExiledMemberBattle(Character* player);
-void BossBattle(Character* player);
+void GoblinBattle(Character* player, vector<string> progress);
+void ExiledMemberBattle(Character* player, vector<string> progress);
+void BossBattle(Character* player, vector<string> progress);
 void printProgress(vector<string> progress);
 
 
@@ -39,66 +39,73 @@ int main() {
     Character* userCharacter;
     int sceneNum;
     vector<string> progress;
+    progress.push_back("Exiled from the Kingdom");
     //Will have to make a Character class that inherits the Mage and Warrior classes
     userCharacter = openingScene(typeCharacter,userCharacter);
     sceneNum = firstScene(userCharacter, progress);
     string tempSecondScene;
     string tempThirdScene;
     string endingScene;
+    
     if(sceneNum == 1){
-	tempSecondScene = forestScene(userCharacter, progress);
-    }else if (sceneNum == 2){
-	tempSecondScene  = beachScene(userCharacter, progress);
+        tempSecondScene = forestScene(userCharacter, progress);
     }
+    else if (sceneNum == 2){
+        tempSecondScene  = beachScene(userCharacter, progress);
+    }
+    progress.push_back(tempSecondScene);
     
     if(tempSecondScene == "Investigate Structure Scene"){
-	
-	tempThirdScene = investigateStructureScene(userCharacter, progress);
-    }else if (tempSecondScene == "Waterfall Scene"){
-	
+        tempThirdScene = investigateStructureScene(userCharacter, progress);
+    }
+    else if (tempSecondScene == "Waterfall Scene"){
     	tempThirdScene = waterfallScene(userCharacter, progress);
-    }else if (tempSecondScene == "Beach 2 Scene"){
+    }
+    else if (tempSecondScene == "Beach 2 Scene"){
     	tempThirdScene = beach2Scene(userCharacter, progress);
     }
-
+    progress.push_back(tempThirdScene);
 
     if(tempThirdScene == "Boss Scene Front"){
-	endingScene = bossSceneFront(userCharacter, progress);	
-    }else if (tempThirdScene == "Boss Scene Back"){
-	endingScene = bossSceneBack(userCharacter, progress);
-    }else if (tempThirdScene == "Death Route"){
-	endingScene = deathRoute(userCharacter, progress);
-    }else if (tempThirdScene == "Secret Ending"){
-	cout << "CONGRATULATIONS, SECRET ENDING ACHIEVED"<<endl;
-	endingScene = secretEnding(userCharacter, progress);
-    }else {
-	cout << "NO THIRD SCENE FOUND" <<endl;
+        endingScene = bossSceneFront(userCharacter, progress);
     }
+    else if (tempThirdScene == "Boss Scene Back"){
+        endingScene = bossSceneBack(userCharacter, progress);
+    }
+    else if (tempThirdScene == "Death Route"){
+        endingScene = deathRoute(userCharacter, progress);
+    }
+    else if (tempThirdScene == "Secret Ending"){
+        cout << "CONGRATULATIONS, SECRET ENDING ACHIEVED"<<endl;
+        endingScene = secretEnding(userCharacter, progress);
+    }
+    progress.push_back(endingScene);
 
 	if(endingScene == "THE END"){
 		cout << "After defeating the boss of this island, you triumphantly climb the tower and ride his helicopter. Of course you, don't actually have any keys so you make your way to search his room and bring some jewellery while you were there. Once you get in the coptor, you fly high and start to search for where civilization is again."<<endl;
-		cout << "Congratz you won the game"<<endl;
+		cout << "Congrats, you won the game"<<endl;
 	}else if(endingScene == "Death End Route"){
 		cout << "Unfortunately you got the bad end"<<endl;
 	}else if(endingScene == "Secret Route End"){
-		cout << "Congratz, you found the secret route"<<endl;
+		cout << "Congrats, you found the secret route"<<endl;
 	}
 	printProgress(progress);
 	return 0;
 }
 void printProgress(vector<string> progress){
-	
-	cout << endl << "Your decisions" <<endl;
-	for(int i = 0, i<progress.size();i++){
-		cout << "Choice #" << i + 1 << ": ";
+	cout << endl << "Your Decisions" <<endl;
+    for(int i = 0; i < progress.size(); i++){
+		cout << "Scene #" << i + 1 << ": ";
 		cout << progress.at(i)<<endl;
 	}
-
+    cout << endl;
 }
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) {
     string name;
     Character* character;
     int response = 0;
+    bool human = false;
+    bool mage = false;
     cout << "SCENE: Court Room" << endl;
     cout << "Judge: Who is the next person up for judgment?" << endl;
     cout << "Deputy: State your name to the judge." << endl;
@@ -110,6 +117,7 @@ Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) 
         if (response == 1) {
             typeCharacter = new AnimalRace();
         } else if (response == 2) {
+            human = true;
             typeCharacter = new HumanRace();
         } else {
             cout << "Judge: No funny business, please tell me your race." << endl;
@@ -124,12 +132,31 @@ Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) 
         if (response == 1) {
             character = typeCharacter->createWarrior(name);
         } else if (response == 2) {
+            mage = true;
             character = typeCharacter->createMage(name);
         } else {
             cout << "Judge: No funny business, please tell me your profession." << endl;
             cout << "(Enter 1 for warrior or 2 for mage)" << endl;
         }
     }
+    // tests the character selection menu
+    if (human) {
+        if (mage) {
+            cout << "* You have selected a Human Mage as your character. *" << endl;
+        }
+        else {
+            cout << "* You have selected a Human Warrior as your character. *" << endl;
+        }
+    }
+    else {
+        if (mage) {
+            cout << "* You have selected an Animal Mage as your character. *" << endl;
+        }
+        else {
+            cout << "* You have selected an Animal Warrior as your character. *" << endl;
+        }
+    }
+    
     cout << "Judge: For the betrayal of your team and murder for your partner, you are sentenced to death by hanging" << endl;
     cout << name << ": Your honor please, my reasons are valid; I should not have my life taken away." << endl;
     cout << "Judge: Valid or invalid, your crimes are still clear, but if you still believe your life should not be taken, then you shall be exiled on the abandoned island." << endl;
@@ -138,7 +165,7 @@ Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter) 
     return character;
 }
 
-int firstScene(Character* userCharacter, vector<string> progress) {
+int firstScene(Character* userCharacter, vector<string>& progress) {
     int response = 0;
     int scene = 0;
     cout << "SCENE: Stranded Beach" << endl;
@@ -198,7 +225,7 @@ string beachScene(Character* userCharacter, vector<string> progress){
 		}
 		else if (response == 3){
 			cout << "As you walk past him you start to notice how run down his area was, but it’s none of your business. As you walk a few paces past what you could only assume was his area, you start to hear a waterfall nearby and that's when you get stabbed in the back from the guy that was supposedly sleeping. (Player takes damage). The guy was never actually sleeping and you simply showed your back to a potential enemy. You were an exiled on this beach, if he’s there then he must be one too. He loads up a second strike but he you parry it and you guys fight." <<endl;
-			ExiledMemberBattle(userCharacter);
+			ExiledMemberBattle(userCharacter, progress);
 			return "Waterfall Scene";
 			//call Battle Function
 		}
@@ -249,7 +276,7 @@ string BeachDialogue(Character* userCharacter, vector<string> progress){
 			cout << "How about before I answer that we go into the forest? It's morning and I haven’t had anything to eat and I’m sure you haven’t either. There is a lot of food in the forest as it seems there has been little human intervention." <<endl;
 			//BATTLE TRIGGER
 			cout << "You both start walking into the forest with Tane leading to a place with some good fruit. “You know I remembered the reason why I’m here, before I was knocked out and landed on this beach, I remember a court scene. Heh, yea I was exiled. But you know, that also means you’ve been exiled, and that means you’ve got blood on your hands” As we finish his sentence an arrow shoots, hidden in some bushes and pierces your shoulder, just nearly missing your head. “Tsk, You’re a criminal like me, I can’t trust you” He pulls out his sword and gets ready to fight you." <<endl;
-			ExiledMemberBattle(userCharacter);
+			ExiledMemberBattle(userCharacter, progress);
 			return "Waterfall Scene";
 		}
 		else if (response == 5){
@@ -270,8 +297,6 @@ string BeachDialogue(Character* userCharacter, vector<string> progress){
 	
 		
 		}
-
-
 	}
 }
 string forestScene(Character* userCharacter, vector<string> progress){
@@ -297,16 +322,16 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "The Goblin throws a small knife hitting your leg and slowing you down enough for him to get to you" <<endl;
 					//PLAYER FREE HIT
 					//BATTLE
-					GoblinBattle(userCharacter);
+					GoblinBattle(userCharacter, progress);
 				}
 				else if (response == 2){ 
 					cout << "You tell the Goblin you were lost and would much appreciate it if he could lead you back to civilization. He responds in a deep and dirty voice, “Well that’s fine, it's just down this trail. But you know, the only people here that can be wandering around outside needs a badge right?” You awkwardly smile and nod your head “of course, of course I knew that, I just so happened to have lost my badge.” He responds “Ah, then that’s good, because then that means you should also know that if you don’t have a badge outside then we can only assume that you are an exile to which we may kill on the spot” He sports a dark grin as he unsheathed his sword and points it at you. “Hope you’re ready to die exile, cus I’m ready for a promotion”" <<endl;
 					//BATTLE
-					GoblinBattle(userCharacter);
+					GoblinBattle(userCharacter, progress);
 				}else if (response == 3){
 					userCharacter->stats();
 					cout << "This is no time to look at your stats. The Goblin throws a knife at you while you're distracted then prepares for battle" <<endl;
-					GoblinBattle(userCharacter);
+					GoblinBattle(userCharacter, progress);
 					//PLAYER FREE HIT
 					//BATTLE	
 				}
@@ -354,7 +379,7 @@ string forestScene(Character* userCharacter, vector<string> progress){
 					cout << "Goblin grunts in pain “haah, an exile stabbing me in the back, how typical”" <<endl;
 					//Goblin Takes free hit
 					//GOBLINE BATTLE
-					GoblinBattle(userCharacter);
+					GoblinBattle(userCharacter, progress);
 					cout << "after a successful victory against the Goblin, you come accross the structure that the path lead to "<<endl;
 					return "Investigate Structure Scene";
 				}else if (response ==2){
@@ -417,7 +442,6 @@ string forestScene(Character* userCharacter, vector<string> progress){
 		}
 
 	}
-
 }
 string investigateStructureScene(Character* userCharacter, vector<string> progress){
 	int response = 0;
@@ -445,7 +469,8 @@ string investigateStructureScene(Character* userCharacter, vector<string> progre
                         cout << "(Enter 2) Look around" <<endl;
                         cout << "(Enter 3) view Stats" <<endl;
 		}
-	}	
+	}
+    
 }
 
 
@@ -518,13 +543,13 @@ string bossSceneFront(Character* userCharacter, vector<string> progress){
 	cin >> response;
 	if((response == 1)||(response == 2) ){
 		cout << "Boss: Heh, now thats more like it"<<endl;
-		BossBattle(userCharacter);
+		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 	}
 	else if(response == 3){
 		userCharacter->stats();
 		cout << "While you were busy trying to checkout your well being, thinking back to your past actions or whatever you were trying to do, the boss got a free hit on you while you were distracted"<<endl;
-		BossBattle(userCharacter);
+		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 	}
 	return "THE END";
@@ -539,21 +564,21 @@ string bossSceneBack(Character* userCharacter, vector<string> progress){
 	cin >> response;
 	if(response == 1){
 		cout << "The man enters the room, to immediately notice his prized achievement of a pendant gone. He looks shaken, but before he can’t even call out “who goes there” an arrow shoots from the side of the room and hits him around his waist (Boss takes a free hit) Afterwards you jump in to try to get another hit but he parries by unsheathing his sword." <<endl;
-		BossBattle(userCharacter);
+		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 
 	}else if(response ==2){
 		cout << "The man enters the room and even before he lets go of the door handle you jump on him attempting to give a clean cut on his head, but he moves his hand to block the blade, taking a stab through his hand but avoiding fatality. (Boss takes a free hit) He pushes you off of him and takes out his sword." <<endl;
-		BossBattle(userCharacter);
+		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 	}else if (response ==3) {
 		userCharacter->stats();
 		cout << "you took your time look at your stats and lost the element of surprise. The boss sees you and draws his sword" <<endl;
-		BossBattle(userCharacter);
+		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 	}else{
 		cout <<"you took your time doing who knows what (not setting up a surprise attack thats for sure), and lost the element of surprise. The boss sees you and draws his sword" <<endl;
- 		BossBattle(userCharacter);
+ 		BossBattle(userCharacter, progress);
 		//BOSS BATTLE
 	}
 
@@ -571,7 +596,7 @@ string secretEnding(Character* userCharacter, vector<string> progress){
 
 }
 
-void GoblinBattle(Character* player) {
+void GoblinBattle(Character* player, vector<string> progress) {
 	Goblin* goblinObj = new Goblin();
 	double bias = player->getIQ() - goblinObj->getHealth();
 	Dice20App* GobDice = new Dice20App(11, 0);
@@ -675,10 +700,10 @@ void GoblinBattle(Character* player) {
 			}
 		}
 		 if (goblinObj->getHealth() <= 0) {
-              		cout << "The Goblin has died" <<endl;
+             cout << "The Goblin has died" <<endl;
 			 cout << "=========BATTLE OVER=========="<<endl;
-			return;
-	        }
+             return;
+         }
 	
 		if (!reaction) {
 			GobDice->setBias(2);
@@ -698,6 +723,7 @@ void GoblinBattle(Character* player) {
 	if (player->getHealth() <= 0) {
 		cout << "You Have Died"<<endl;
 		cout << "GAME OVER" <<endl;
+        printProgress(progress);
 		exit(0);
 	}
 	else {
@@ -705,7 +731,7 @@ void GoblinBattle(Character* player) {
 	}
 }
 
-void ExiledMemberBattle(Character* player) {
+void ExiledMemberBattle(Character* player, vector<string> progress) {
     ExiledMember* exiledObj = new ExiledMember();
     double bias = player->getIQ() - exiledObj->getHealth();
     Dice20App* exiledDice = new Dice20App(11, 0);
@@ -793,10 +819,9 @@ void ExiledMemberBattle(Character* player) {
             }
         }
 	if (exiledObj->getHealth() <= 0) {
-                 cout << "The Exile has died" <<endl;
-                 cout << "=========BATTLE OVER=========="<<endl;
-
-		return;
+            cout << "The Exile has died" <<endl;
+            cout << "=========BATTLE OVER=========="<<endl;
+            return;
         }
 
 	if (exiledObj->getHealth() <= 12) {
@@ -836,7 +861,8 @@ void ExiledMemberBattle(Character* player) {
 	cout << "===============BATTLE OVER============="<<endl;
 	if (player->getHealth() <= 0) {
 		cout << "You Have Died"<<endl;
-                cout << "GAME OVER" <<endl;
+        cout << "GAME OVER" <<endl;
+        printProgress(progress);
 		exit(0);
 	}
 	else {
@@ -844,7 +870,7 @@ void ExiledMemberBattle(Character* player) {
 	}
 }
 
-void BossBattle(Character* player) {
+void BossBattle(Character* player, vector<string> progress) {
     Boss* bossObj = new Boss();
     double bias = player->getIQ() - bossObj->getHealth();
     Dice20App* bossDice = new Dice20App(11, 0);
@@ -950,14 +976,12 @@ void BossBattle(Character* player) {
                 cout << "Enter 4 to run away" << endl;
             }
         }
-	if (bossObj->getHealth() <= 0) {
+        if (bossObj->getHealth() <= 0) {
        		 cout << "The Boss has died" <<endl;
-                 cout << "=========BATTLE OVER=========="<<endl;
- 
-		return;
-	    }
+             cout << "=========BATTLE OVER=========="<<endl;
+            return;
+        }
 
-	
         if (!reaction) {
             bossDice->setBias(2);
 		bossDice->SetRollFunction();
@@ -976,7 +1000,8 @@ void BossBattle(Character* player) {
     if (player->getHealth() <= 0) {
         cout << "You Have Died"<<endl;
         cout << "GAME OVER" <<endl;
-	exit(0);
+        printProgress(progress);
+        exit(0);
     }
     else {
         return;
