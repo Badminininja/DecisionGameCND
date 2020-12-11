@@ -19,7 +19,7 @@ using namespace std;
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
 int firstScene(Character* userCharacter, vector<string> progress);
 string beachScene(Character* userCharacter, vector<string> progress);
-string BeachDialogue();
+string BeachDialogue(Character* userCharacter, vector<string> progress);
 string forestScene(Character* userCharacter, vector<string> progress);
 string investigateStructureScene(Character* userCharacter, vector<string> progress);
 string waterfallScene(Character* userCharacter, vector<string> progress);
@@ -172,11 +172,11 @@ string beachScene(Character* userCharacter, vector<string> progress){
 		cin >> response;
 		if(response ==1){
 			cout << "The guy sleeping woke up and noticed you. He does an inviting gesture and you walk up a bit closer so you can talk to him." <<endl;//DIALOGUE
-			return BeachDialogue();
+			return BeachDialogue(userCharacter, progress);
 		}
 		else if(response == 2){
 			cout << "As you shake him vigorously to wake him up, the guy gets startled and wakes up; however, as a defensive reaction to his sudden awakening he hit you with a rock that he was holding while sleeping. (Player takes damage) “Oh man, sorry, I didn’t mean to hit you, it's just that I thought you might have been like a bear or something, it was just a reflex” the stranger says. He then sits up and asks if you want to know anything as it was the least he could do." <<endl; //DIALOGUE
-			return BeachDialogue();	
+			return BeachDialogue(userCharacter, progress);	
 		}
 		else if (response == 3){
 			cout << "As you walk past him you start to notice how run down his area was, but it’s none of your business. As you walk a few paces past what you could only assume was his area, you start to hear a waterfall nearby and that's when you get stabbed in the back from the guy that was supposedly sleeping. (Player takes damage). The guy was never actually sleeping and you simply showed your back to a potential enemy. You were an exiled on this beach, if he’s there then he must be one too. He loads up a second strike but he you parry it and you guys fight." <<endl;
@@ -197,10 +197,11 @@ string beachScene(Character* userCharacter, vector<string> progress){
 			cout << "(Enter 4 for stats)"<<endl;
 		}
 	}
+	return "BEACH OUT OF LOOP";
 
 
 }
-string BeachDialogue(){
+string BeachDialogue(Character* userCharacter, vector<string> progress){
 	int response = 0;
 	cout << "Hey, my name is Octavius, Tane Octavius, I’ve been here for a short while now, is there anything you wanted to know? I don’t have much better things to do right now and I don’t mind the company." <<endl;
 	cout << "What do you want to know?" <<endl;
