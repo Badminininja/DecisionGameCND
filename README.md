@@ -35,7 +35,6 @@
  * Open the terminal and cd into final-projct-amasa004-dsenc002-jmang018 
  * Then, run cd ./CrashedAndDesertred/CrashedAndDeserted 
  * Run the following commands in the terminal: 
- * git submodule update --init
  * cmake3 .
  * make
  * ./game
