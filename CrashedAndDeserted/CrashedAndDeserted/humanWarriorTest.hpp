@@ -29,8 +29,8 @@ TEST(humanWarriorTest, specialAttackTest) {
     CharacterRace* playerType = new HumanRace();
     Character* player = playerType->createWarrior("aro");
     EXPECT_DOUBLE_EQ(player->specialAttack(), 8.0);
-    //player->increaseSpells(3.0);
-    //EXPECT_DOUBLE_EQ(player->specialAttack(), 8.0);
+    player->increaseSmite(3.0);
+    EXPECT_DOUBLE_EQ(player->specialAttack(), 11.0);
 }
 
 TEST(humanWarriorTest, IQTest) {
