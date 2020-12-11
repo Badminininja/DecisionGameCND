@@ -1,12 +1,15 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
+project(CrashedAndDeserted)
+
 ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
-	unit_test.cpp
-	animalMage.cpp
+	CrashedAndDeserted/CrashedAndDeserted/unit_test.cpp
+	CrashedAndDeserted/CrashedAndDeserted/animalMage.cpp
+	CrashedAndDeserted/CrashedAndDeserted/animalWarrior.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest) 
