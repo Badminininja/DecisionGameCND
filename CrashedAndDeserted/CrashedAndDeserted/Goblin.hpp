@@ -17,8 +17,8 @@ class Goblin {
 		void attack_power_indicator(Character*);
 		void deflect_damage(double, Character*);
 		void loseHealth(double);
-		int getHealth();
-		int getSpecialAttack();
+		double getHealth();
+		double getSpecialAttack();
 		
 };
 #endif

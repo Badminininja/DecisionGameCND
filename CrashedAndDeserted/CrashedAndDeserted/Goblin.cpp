@@ -33,9 +33,9 @@ void Goblin::loseHealth(double playerAttack) {
 	this->health = this->health - playerAttack;
 	cout << "The Goblin has " << this->health << endl;
 }
-int Goblin::getHealth() {
+double Goblin::getHealth() {
 	return this->health;
 }
-int Goblin::getSpecialAttack() {
+double Goblin::getSpecialAttack() {
 	return this->attack_power;	
 }

@@ -25,9 +25,9 @@ void Boss::loseHealth(double playerAttack) {
 	//cout << "The Boss has " << this->health - playerAttack << " health" << endl;
 	this->health = this->health - playerAttack;
 }
-int Boss::getHealth() {
+double Boss::getHealth() {
 	return this->health;
 }
-int Boss::getDamage() {
+double Boss::getDamage() {
 	return this->damage;
 }

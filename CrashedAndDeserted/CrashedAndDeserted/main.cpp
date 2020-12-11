@@ -17,6 +17,7 @@ using namespace std;
 Character* openingScene(CharacterRace* typeCharacter, Character* userCharacter);
 int firstScene(Character* userCharacter, vector<string> progress);
 bool GoblinBattle(Character* player);
+
 int main() {
     CharacterRace* typeCharacter;
     Character* userCharacter;

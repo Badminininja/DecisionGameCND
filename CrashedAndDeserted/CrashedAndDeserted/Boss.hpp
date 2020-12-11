@@ -7,8 +7,8 @@ class Boss {
 	private:
 		static Boss* boss_instance;
 		//double attackDamage;
-		int health = 25;
-		int damage = 5;
+		double health = 25;
+		double damage = 5;
 
 	public:
 		Boss();
@@ -16,7 +16,7 @@ class Boss {
 		double attackDamage(Character*);
 		void reflectDamage(double, Character*);
 		void loseHealth(double);
-		int getHealth();
-		int getDamage();
+		double getHealth();
+		double getDamage();
 };
 #endif

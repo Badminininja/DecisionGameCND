@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
 
-#include "Goblin.hpp"
-#include "Boss.hpp"
-#include "ExiledMember.hpp"
+#include "GoblinTest.hpp"
+#include "BossTest.hpp"
+#include "ExiledMemberTest.hpp"
 //#include "Dice6AppTest.hpp"
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
