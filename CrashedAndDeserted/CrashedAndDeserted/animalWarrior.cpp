@@ -9,16 +9,6 @@
 #include "animalWarrior.hpp"
 #include <iostream>
 
-AnimalWarrior::AnimalWarrior(std::string name, std::string race) {
-    name = name;
-    race = race; 
-    healthItem = false; 
-    IQ = 4.0; 
-    basicAttack = 5.5;
-    health = 18.0; 
-    smite = 7.0;
-}
-
 double AnimalWarrior::attack() {
     std::cout << this->name << " used a basic attack and did " << this->basicAttack << " damage." << std::endl;
     return this->basicAttack;
