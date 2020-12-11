@@ -25,6 +25,10 @@ string investigateStructureScene(Character* userCharacter, vector<string> progre
 string waterfallScene(Character* userCharacter, vector<string> progress);
 string beach2Scene(Character* userCharacter, vector<string> progress);
 string bossSceneFront(Character* userCharacter, vector<string> progress);
+string bossSceneBack(Character* userCharacter, vector<string> progress);
+string deathRoute(Character* userCharacter, vector<string> progress);
+string secretEnding(Character* userCharacter, vector<string> progress);
+
 //bool GoblinBattle(Character* player);
 //bool ExiledMemberBattle(Character* player);
 //bool BossBattle(Character* player);
@@ -39,7 +43,7 @@ int main() {
     sceneNum = firstScene(userCharacter, progress);
     string tempSecondScene;
     string tempThirdScene;
-    string EndingScene;
+    string endingScene;
     if(sceneNum == 1){
 	tempSecondScene = forestScene(userCharacter, progress);
     }else if (sceneNum == 2){
@@ -53,20 +57,19 @@ int main() {
 	
     	tempThirdScene = waterfallScene(userCharacter, progress);
     }else if (tempSecondScene == "Beach 2 Scene"){
-	
-	cout << "GOT TO THE BEACH 2 SCENE" << endl;
     	tempThirdScene = beach2Scene(userCharacter, progress);
     }
 
+
     if(tempThirdScene == "Boss Scene Front"){
-	cout << "GOT TO BOSS SCENE FRONT"<<endl;
 	endingScene = bossSceneFront(userCharacter, progress);	
     }else if (tempThirdScene == "Boss Scene Back"){
-	cout << "GOT TO BOSS SCENE BACK"<<endl;
+	endingScene = bossSceneBack(userCharacter, progress);
     }else if (tempThirdScene == "Death Route"){
-	cout << "GOT TO DEATH ROUTE"<<endl;
+	endingScene = deathRoute(userCharacter, progress);
     }else if (tempThirdScene == "Secret Ending"){
 	cout << "CONGRATULATIONS, SECRET ENDING ACHIEVED"<<endl;
+	endingScene = secretEnding(userCharacter, progress);
     }else {
 	cout << "NO THIRD SCENE FOUND" <<endl;
     }
@@ -466,10 +469,62 @@ string beach2Scene(Character* userCharacter, vector<string> progress){
 
 
 }
+string bossSceneFront(Character* userCharacter, vector<string> progress){
+	int response = 0;
+	cout << "As you look around in the structure you approach an isolated pedestal that contains an amulet that seemed familiar. As you walk up to and begin to inspect the amulet you realize where exactly that amulet wa-\n“Well, well, well, it seems a rat has crawled onto one of my most prized achievements'' Someone at the other end of the room spots you and starts walking toward you. “This achievement was one of the best ones I’ve had in awhile. Originally I was just following a kill order; assassinate a person in a squad while they’re on a mission, but I was also able to frame one of their party members to be the one who did it. Such offense leads to a death sentence. Killing one person, framing and killing another while leaving the whole squad in pieces. To top it off, I was able to be rewarded for capturing the ‘so-called’ culprit and got this wonderful job one this deser-” By now he was close enough to see who exactly he was talking to. “OH, well ain’t that a surprise.” He crafted a grin with his mouth “Hello there so-called-culprit rat”"<<endl;
+	cout << "CHOICE"<<endl;
+	cout << "(Enter 1) yell: “YOU DIRTY ASSASSIN I’LL F**KING KILL YOU”"<<endl;
+	cout << "(Enter 2) yell: “B*TCH, THOSE WERE MY FRIENDS, I'LL KILL YOU”"<<endl;
+	cout << "(Enter 3) view stats" <<endl;
+	cin >> response;
+	if((response == 1)||(response == 2) ){
+		cout << "Boss: Heh, now thats more like it"<<endl;
+		//BOSS BATTLE
+	}
+	else if(response == 3){
+		cout << "STATS PLACEHOLDER"<<endl;
+		cout << "While you were busy trying to checkout your well being, thinking back to your past actions or whatever you were trying to do, the boss got a free hit on you while you were distracted"<<endl;
+		//BOSS BATTLE
+	}
+	return "THE END";
+}
+string bossSceneBack(Character* userCharacter, vector<string> progress){
+	int response = 0;
+	cout << " Coming into the structure from a high balcony you look around to find a lavish bedroom, decorated with high quality linens and materials all around. A place, where anyone would want to stay. But you know that this means someone resides here and it’s not safe. You keep an ear out as you open the door to survey the surrounding and find closeby a pedestal containing a familiar pendant. Upon closer inspection you realize that that pendant was the pendant your deceased team member kept on them and cherished. . . There’s even a bloodstain still left on it. . . . You quickly snatch the pendant and hide within an area in the ceiling as you hear footsteps coming closer to your area. You piece together that this person walking closer is probably the person who killed your teammate and framed you for murder. Knowing this you know he or she won’t let you just waltz out of here and get to the top of the tower to the helicopter. You’re gonna have to kill him for it. With this in mind you prepare a pre-emptive strike." <<endl;
+	cout << "CHOICE" <<endl;
+	cout << "(Enter 1) Lay a trap for him" <<endl;
+	cout << "(Enter 2) Ambush him when he enters the room" <<endl;
+	cout << "(Enter 3 view Stats" <<endl;
+	cin >> response;
+	if(response == 1){
+		cout << "The man enters the room, to immediately notice his prized achievement of a pendant gone. He looks shaken, but before he can’t even call out “who goes there” an arrow shoots from the side of the room and hits him around his waist (Boss takes a free hit) Afterwards you jump in to try to get another hit but he parries by unsheathing his sword." <<endl;
+		//BOSS BATTLE
 
+	}else if(response ==2){
+		cout << "The man enters the room and even before he lets go of the door handle you jump on him attempting to give a clean cut on his head, but he moves his hand to block the blade, taking a stab through his hand but avoiding fatality. (Boss takes a free hit) He pushes you off of him and takes out his sword." <<endl;
+		//BOSS BATTLE
+	}else if (response ==3) {
+		cout << "STATS PLACEHOLDER"<<endl;
+		cout << "you took your time look at your stats and lost the element of surprise. The boss sees you and draws his sword" <<endl;
+		//BOSS BATTLE
+	}else{
+		cout <<"you took your time doing who knows what (not setting up a surprise attackt thats for sure), and lost the element of surprise. The boss sees you and draws his sword" <<endl;
+ 		//BOSS BATTLE
+	}
 
+	
+	return "THE END";
+}
+string deathRoute(Character* userCharacter, vector<string> progress){
+	cout << "You wake up from a sudden thud that caused the ground to shake, you still hear the waterfall so you know you are close by where you fell asleep from but it seems you were dragged into a cave and is tied up. Fortunately it seems that whoever tied you up did an extremely poor job and with little effort you were able to cut your bindings off, but then you felt the ground shake again. As you turn around you hear in a deep voice from behind you “NOW WE CAN'T HAVE YOU GOING ANYWHERE NOW” you couldn’t see exactly what said that in a booming voice since the cave was dark but you back up in fear as you see a shrouded figure 2 to 3 times your size in front of you. As the figure got closer to the entrance of the cave toward the light you realize it was a Troll, but before you could react he grabbed a club and hit you with full force" <<endl;
 
+	return "Death Route End";
+}
+string secretEnding(Character* userCharacter, vector<string> progress){
+	cout << "you survived without fighting anyone and still managed to get off the island. Congratz" <<endl;
+	return "Secret Route End";
 
+}
 /*
 bool GoblinBattle(Character* player) {
 	Goblin* goblinObj = new Goblin();
