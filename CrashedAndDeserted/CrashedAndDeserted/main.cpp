@@ -21,7 +21,10 @@ int firstScene(Character* userCharacter, vector<string> progress);
 string beachScene(Character* userCharacter, vector<string> progress);
 string BeachDialogue();
 string forestScene(Character* userCharacter, vector<string> progress);
-
+string investigateStructureScene(Character* userCharacter, vector<string> progress);
+string waterfallScene(Character* userCharacter, vector<string> progress);
+string beach2Scene(Character* userCharacter, vector<string> progress);
+string bossSceneFront(Character* userCharacter, vector<string> progress);
 //bool GoblinBattle(Character* player);
 //bool ExiledMemberBattle(Character* player);
 //bool BossBattle(Character* player);
@@ -35,11 +38,39 @@ int main() {
     userCharacter = openingScene(typeCharacter,userCharacter);
     sceneNum = firstScene(userCharacter, progress);
     string tempSecondScene;
+    string tempThirdScene;
+    string EndingScene;
     if(sceneNum == 1){
 	tempSecondScene = forestScene(userCharacter, progress);
     }else if (sceneNum == 2){
 	tempSecondScene  = beachScene(userCharacter, progress);
     }
+    
+    if(tempSecondScene == "Investigate Structure Scene"){
+	
+	tempThirdScene = investigateStructureScene(userCharacter, progress);
+    }else if (tempSecondScene == "Waterfall Scene"){
+	
+    	tempThirdScene = waterfallScene(userCharacter, progress);
+    }else if (tempSecondScene == "Beach 2 Scene"){
+	
+	cout << "GOT TO THE BEACH 2 SCENE" << endl;
+    	tempThirdScene = beach2Scene(userCharacter, progress);
+    }
+
+    if(tempThirdScene == "Boss Scene Front"){
+	cout << "GOT TO BOSS SCENE FRONT"<<endl;
+	endingScene = bossSceneFront(userCharacter, progress);	
+    }else if (tempThirdScene == "Boss Scene Back"){
+	cout << "GOT TO BOSS SCENE BACK"<<endl;
+    }else if (tempThirdScene == "Death Route"){
+	cout << "GOT TO DEATH ROUTE"<<endl;
+    }else if (tempThirdScene == "Secret Ending"){
+	cout << "CONGRATULATIONS, SECRET ENDING ACHIEVED"<<endl;
+    }else {
+	cout << "NO THIRD SCENE FOUND" <<endl;
+    }
+	
 	return 0;
 }
 
@@ -346,12 +377,95 @@ string forestScene(Character* userCharacter, vector<string> progress){
 	}
 
 }
+string investigateStructureScene(Character* userCharacter, vector<string> progress){
+	int response = 0;
+	cout << "As you approach the structure, you can tell that there couldn’t be that many people that could reside in said structure as it is quite small. It seems to be more like a small outpost than a giant base of operations. Through investigation you find that there is only one main door at the front with all other normal entrances blocked off with crumbled rocks and wood. You also notice that there seems to be a helicopter at the top of the structure, but it's situated on the top of a tower inside the structure's walls. You might be able to find some way to climb the outside walls, but the tower is much too tall to be able to climb on your own." << endl;
+	cout << "CHOICES "<<endl;
+	cout << "(Enter 1) Go through the front door? Surely with how run down the place looks, they wouldn’t have that much security" <<endl;
+	cout << "(Enter 2) Look around to see if it's possible to climb over the walls and get into the structure without having to use the front door." <<endl;
+	cout << "(Enter 3) view Stats" <<endl;
+	while((response !=1) && (response !=2)){
+		cin >> response;
+		if(response == 1){
+			cout << "You were right. It was pretty much empty in the building save for some amenities and foodstuffs. It seemed like it was only really meant to accommodate one or a few people." <<endl;
+			return "Boss Scene Front";
+		}else if (response == 2){
+			cout << "You circle around the castle to delight that part of the forest touches the top of the wall. This allowed you to be able to climb one of the trees and jump onto the wall and get inside from the backside. You believe it would have been too obvious if you had gone through the front door since you are technically a criminal so people might not be the friendliest toward you. You think highly of yourself for this task and enter a balcony opening inside the structure." <<endl;
+			return "Boss Scene Back";
+		}else if (response == 3){
+			cout << "STATS PLACEHOLDER"<< endl;
+			cout << "(Enter 1) front door" <<endl;
+        		cout << "(Enter 2) Look around" <<endl;
+        		cout << "(Enter 3) view Stats" <<endl;	
+		}else {
+			cout << "Don't delay, you wont find a better time to get in" <<endl;
+			cout << "(Enter 1) front door" <<endl;
+                        cout << "(Enter 2) Look around" <<endl;
+                        cout << "(Enter 3) view Stats" <<endl;
+		}
+	}	
+}
+
+
+string waterfallScene(Character* userCharacter, vector<string> progress){
+	int response = 0;
+
+	cout << "As you make your way toward the waterfall you start to feel woozy, you try your best to shake it off until you get to the waterfall. Successfully making it there you take a break and sit down. Everything feels so calming, you start to hear high pitched giggles around you that pierce the sound of the crashing waterfall; however, it doesn’t startle you. You feel amazing and as you try to look in the direction of the giggles you don’t see anything and you hear the giggles from the opposite side from where you looked. As you become even more delirious you slowly more and more start to see something sparkling. Then a pixie appears before you. They tell you that as a strong individual it is your duty to take down those which are tyrannus and kill the tyrant of the island in the castle in the middle of the island." <<endl;
+	cout << "CHOICES" <<endl;
+	cout << "(Enter 1) Accept Quest" <<endl;
+	cout << "(Enter 2) Decline Quest" <<endl;
+	cout << "(Enter 3) view Stats" <<endl;
+		cin >> response;
+		if(response == 1){
+			cout << "you start to hear joyful glees from the pixie and then another and then another. Then you start to hear them giggle again as you start to become more and more delirious. Before knocking out you hear one of them say “Good luck, our saviour” When you awake you are nowhere near the waterfall as its sound cannot be heard anymore, and you seem to not feel the ground. As you look down, you see that you are indeed flying, but as you realize this you once again hear a giggle from one pixie then she says “times up” then you start to feel gravity kick in and you feel as though you are now going to fall to your death; however, your fall is broken and it seems you landed on a balcony and looking around you see that your in something like a medieval structure similar to a castle" <<endl;
+			return "Boss Scene Back";
+		}else if (response == 2) {
+			cout << "you start to hear gumbles from the pixie and then another and then another. Then you start to hear them giggle again as you start to become more and more delirious. Before knocking out you hear one of them say “Your loss”" <<endl;
+			return "Death Route";
+		}else if (response == 3) {
+			cout << "as you try to look at your stats, you can't make out what they say, before you know it you knock out" <<endl;
+			return "Death Route";
+		}else {
+			cout << "As you take too much time to decide the magic from the pixie make you even more delirious making it so you can't even utter a word anymore. You knock out with the last thing you hear is the giggles of multiple pixies" <<endl;
+			return "Death Route";		
+		}
+}
+
+string beach2Scene(Character* userCharacter, vector<string> progress){
+	int response = 0;
+	cout << "As you continue on the beach after meeting Tane, you didn’t expect to find much, but after walking the sand for a while you overhear someone yelling “Get that exile” as well as muffled screaming with multiple hastened footsteps. You see two people chase what you can only assume is another exile into the forest, you also see a boat to which you can assume they came from here." <<endl;
+	cout << "CHOICES: What do you do?" <<endl;
+	cout << "(Enter 1) Steal the boat?" <<endl;
+	cout << "(Enter 2) Stalk and follow the pursuers" <<endl;
+	cout << "(Enter 3) view Stats" <<endl;
+	while((response !=1) && (response !=2)){	
+		cin >> response;
+		if(response == 1){
+			cout << "You hurry toward the boat while the two pursuers are distracted by the exile. As you enter the boat you hear a single high pitched beep. You look to try to start up the boat and get off this forsaken island but you can’t find a key anywhere. After searching for the key for a bit, you hear the beeping get increasingly louder and faster. At one point the beeping stops. You take a deep sigh of relief. And then you get electrified by the boat so much so you lose consciousness. When you wake up you’re next to a door on what looks like a medieval structure." <<endl;
+			return "Boss Scene Front";
+		}else if(response == 2){
+			cout << "After stalking the pursuers for a bit you spot something shiny that they dropped, it seemed to be the key to the boat. While it’s understandable to want to help that other exile, they may not be framed like you were, so you take the key and run back to the boat quickly as the 2 pursuers are still busy. When you get on the boat you hear a single high pitched beep. After inserting the key you found on the floor the boat beeps again but in a deep tone and then turns on. You drive out of the island and look for where civilization is. The boat has enough rations and fuel if you even got slightly lost." <<endl;
+			return "Secret Ending";
+		}else if(response == 3){
+			cout << "STATS PLACEHOLDER"<<endl;
+			cout << "CHOICES: What do you do?" <<endl;
+		        cout << "(Enter 1) Steal the boat?" <<endl;
+		        cout << "(Enter 2) Stalk and follow the pursuers" <<endl;
+		        cout << "(Enter 3) view Stats" <<endl;	
+		}else{
+			cout << "CHOICES: What do you do?" <<endl;
+		        cout << "(Enter 1) Steal the boat?" <<endl;
+		        cout << "(Enter 2) Stalk and follow the pursuers" <<endl;
+		        cout << "(Enter 3) view Stats" <<endl;
+		}
+		
+		
+	}
 
 
 
 
-
-
+}
 
 
 
